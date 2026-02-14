@@ -1093,7 +1093,7 @@ useCallback()
 	-it some like useCallback() function 
 	
 	-useCallback it doesn’t  execute the same function  every render.
-	-instead of it storing(inside React’s internal memory) and take reference and run the function 
+	-instead of it storing(inside React’s internal memory) or memoize and take reference and run the function 
 	-Returns the same function instance untill dependencies change.
 
 	-Useful when passing a function to a child component or when using inside an effect.
@@ -1124,8 +1124,17 @@ const memoizedCallback = useCallback(
 memo()
 	-react.memo and useMemo() both are different
 	
-	-memo
- 	    -Prevents unnecessary re-renders of a functional component if its props haven't changed. 
+	-usememo
+ 	    -it using for storing a result of the function
+	
+main different between the callback and usememo
+	
+	usecallback 
+			
+		it storing(memoize) the function 
+	usememo
+  
+		it storing memozie the return value
 
 		import React, { memo } from 'react';
 
