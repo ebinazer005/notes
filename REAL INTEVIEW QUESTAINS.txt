@@ -1,0 +1,6 @@
+L1 interview 
+1.What is React.memo and how does it optimize performance? 
+2.What is useMemo and how does it optimize performance? 
+3.what is forwardRef ? and How its Work ? 
+4.What is useLayoutEffect and useEffect? 
+5.How do you pass data from a child component to a parent component?

@@ -1,0 +1,1946 @@
+lang chain  
+
+If asked:
+
+	“Did you actually fine-tune the model?”
+
+Answer:
+
+	“We used LangChain with domain-specific prompts and context management to achieve fine-tuned behavior rather than performing full model fine-tuning.”
+
+
+what is spring boot and spring frame work 
+			
+
+	spring 
+		-spring is java framework to build a enterprise application 
+		-but in spring we need to do lot of manual xml configuration for annotation 
+		-Spring does not provide an embedded server.
+		
+		
+	
+	spring boot 
+		
+		-it a project build on top of the spring for make programming easy 
+		-it had a lots of inbuild options like "embedded server" remove manual "xml configuration"	
+		-in spring boot we add a dependency called (starter-web)   - u can use @bean annotation any ware 
+		
+-----------------------------------------------------------------------------
+can we integrate hibernate in  spring boot 
+	
+		using jpa and MySQL dependency  
+-----------------------------------------------------------------------------
+	
+how to convert a type (like :object to json...)
+	
+	using Mapper object 
+	
+	i)object to json
+	
+	ex 
+		Mapper map = new Mapper()
+		
+		String json = map.writeValueAsString(array)
+
+	
+	ii)json to object 
+		
+		 String object = map.readValue(array)
+	
+	iii)string to char 
+		
+		using value.CharAt()
+	
+	iv)char to string
+		
+		character.toString(),String.valueOf()
+		
+	
+	
+
+		
+		
+-----------------------------------------------------------------------------
+what is maven 
+		
+	-maven is build tool to execute to spring build process 
+	
+	
+build process 
+	-install the require dependency and package
+	-execute the unit test case 
+
+instead of using this we can use a gradle also
+	
+-----------------------------------------------------------------------------
+what is task and how to enable that 
+	
+	task 
+	-----
+		-if any task run automatically in background 
+		-for example if we want to delete the temp file we can assign a task 
+		
+	implementation  
+	---------------
+		using @schedule annotation 
+		
+		@schedule(fixedrate = 6000)
+		public void cleartemp(){
+			s.o.p("clear temp file logic")
+		}
+-----------------------------------------------------------------------------
+commandLineRunner
+		
+	-its a interface help to run the  calss autometically when the application start 
+	-it helpful for verify the connection  before the after the application start 	
+		
+		
+@Component
+public class MyRunner implements CommandLineRunner {
+
+    @Override
+    public void run(String... args) throws Exception {
+        System.out.println("Application started! Running startup task...");
+    }
+}
+	
+	
+	
+	
+
+
+	
+diffrent b/w Task and commandLineRunner
+		
+task
+	-task excute based on time for ex 6000 it run every 60 sec 
+	
+commandLineRunner
+	
+	-it execute once in when we start a program 
+		
+-----------------------------------------------------------------------------
+what is spring and spring mvc 
+		
+		-spring a java frame work used to build a large level application 	
+		-spring mvc is part of spring framework used to build an "web application"
+		-using MVC architecture 
+				
+			m (model) ---->right business logic
+			v (view) ------>what ever the client see (ui ,html,jsp,thymeleaf)
+			c (controller) ---->handle the request 
+					
+-----------------------------------------------------------------------------
+what is spring boot
+
+	-spring boot is open source and java based framework
+	
+	-spring boot is help to build a standalone and production ready application
+-----------------------------------------------------------------------------
+microservices 
+		
+	-microservices helps to make large application split in to small services 
+	-that can run independently and using a own server and it can create a own port numbers also 
+
+	microservice contains 
+		 
+		-own embed server 
+		-individual logic  
+		-it own configuration(application properties)
+	
+	for example 
+	
+ 
+	
+hashicorp consul tool 
+			
+		-using this tool we can change the microservices value without hardcode 
+		-any imported value u want to change dynamically we can use consul tools
+	
+		-download the consul from hashicorp 
+		-in cmd "consul agent" command
+		-then config the application.properties
+
+
+-----------------------------------------------------------------------------
+monolithic 
+		
+	-before the microservice use is approach we develop the every service individually 
+	-and we pakeage all service in to one war file and deploy that is monolithic 
+
+disadvantage is 
+	-if any one service crash whole application will get crash 
+	-performance also getting slow
+	-because everything is tightly coupled.
+	
+		
+	
+-----------------------------------------------------------------------------
+
+
+what is src/main/resource/static and template in spring
+
+	-static folder use to store static content like 
+		.css
+		.html
+		.js
+		.imgfile(.png,jpa)	
+	-template
+		it storing content like a dynamic 
+			.Thymeleaf  -used to build a dynamic html page
+
+		
+			
+		
+		
+-----------------------------------------------------------------------------	
+feature of spring boot?
+	
+	-auto configuration 
+		-it means when u add a starter.web dependency 
+		-it automatically configure the application like config the ,Embedded server ,Json conversion
+		-in spring u have to configure manually 
+ 
+
+	-standalone 
+		-it can run independently without other servers 
+		-it had own embedded servers tomcat , jetty  
+	
+	-production ready 
+		- it had a in-build features like a healthcheak  and matric
+
+	-no xml configuration 
+		-it using annotations instead of mannual configration 
+		
+-----------------------------------------------------------------------------
+configuration class 
+		
+		-it create with @configuration  (because component scanning  can identify) 
+		-we can create methods by using @bean annotation 
+		-mostly used for third party classes (Like passwordEncoder , mq message brokers)
+	
+	different b/w @configuration and @component 
+		
+		-both are using for create customize class  
+		-@configuration it create bean for their party class like IBM mq and rebbit mq ,password encoder 
+		-@component can create a own beans but only want spring resource have 
+
+	
+	
+why we cant us component for create security ?
+	
+	-spring security need a special configuration 
+	-because in @component wont allow to security filter chain and password encoder
+	
+-----------------------------------------------------------------------------
+
+advantage Spring boot 
+
+	-microservices friendly  
+	-embbaded servers 
+	-producation ready application 
+	-flexible configuration support (application.properties)
+
+-----------------------------------------------------------------------------
+spring boot layers 
+		
+	controller 
+		-it presentation layer 
+		-cliant communicate send a requst and response from this layer 
+		
+	service 
+
+		-we can right a business login using this layer 
+	
+	data access layer
+		-using repository(jpa) and DAO component to handle the data 
+
+	database layer 
+		-this using to create a entity in database 
+-----------------------------------------------------------------------------
+	
+spring flow architecture 
+	
+	clint----http(request)------->service-------->entity
+					     |--------repsitory
+	
+-----------------------------------------------------------------------------	
+spring architecture 	
+	
+	-spring boot configuration ->start dependency ->spring boot CLI ->spring embed servers -> spring boot actuator 
+
+	
+	-spring boot configuration 
+		-configure class using for managing the beans inside that 
+		-it automatically create a beans based on the classpath
+	
+	 -start dependency
+		start all the dependency based on the our dependency injection
+	
+	 -spring boot cli 
+		-this test and run Spring boot using command line tool before create full project structure using groovy command
+		-you dont need this 
+			-maven 
+			-pom.xml 
+	
+		-in real time we dont use groovy
+	
+	
+	ex
+		spring run app.groovy
+	
+			
+			implementation 
+				
+				-install the CLI from the spring website 
+				-and in terminal go to the application path and run the groovy command
+
+
+
+
+		
+	 -spring embed servers
+		after the test execute the application in server
+	
+	 -spring boot actuator  
+		-this provide the production ready end point
+		-using this end point we can do health check , matrix, login g details
+	SPLUNK 	
+		it using for a logging and monitoring  
+
+	health check -> memory usage 
+	matrix ->provided the detail about cpu usage,jvm memory 
+	loging ->provide the bean detail ,logger details
+
+	
+Common Actuator Endpoints
+	
+	Actuator/health
+	Actuator/metrics
+	Actuator/logging
+
+
+implementation 
+	
+	-add actuator dependency 
+	-and config the the application properties 
+	-it autometically give a end points for cheack the health,matrixs,logs 
+
+	
+
+	
+		
+-----------------------------------------------------------------------------
+actuator security 
+	
+	-we can use a spring security (request matchers) for actuator 
+	-and use https instead of http
+	
+	ex 
+		 .requestMatchers("/actuator/health", "/actuator/info").permitAll()
+-----------------------------------------------------------------------------
+what is Logger (SLF4J - stands for Simple Logging Facade for Java / Logback)
+	
+	-it using for write a log message inside the code 
+	-like log.info("account create successfully") 
+	-it print in console used for error tracing 
+	
+	
+	
+implementation 
+	using a "logger Factory" 
+
+	logger log = loggerFactory.getlogger(classname.clas)
+	
+	log.info("write the message u want ")
+	
+	
+	
+
+-----------------------------------------------------------------------------
+
+annotation 
+	
+	
+what is annotation 
+	
+	-it a metadata and using this annotation we can we config the application behavior 
+	-ins spring boot instead of righting "xml configuration" we can give annotations 
+	-using in spring to config the application and create object
+	
+common annotation 
+
+		
+	@SpringBootApplication		
+		
+		SpringBootApplication = @EnableAutoConfiguration + @Configuration + @ComponentScan 
+	
+		@EnableAutoConfiguration
+			-it is first step of spring structure 
+			-autoconguration is config the application based on the dependency ,library and application.jsm
+ 			
+
+
+		-this main class annotation
+		-help to start spring boot application
+	 	-usage is we "component scanning" and configuration 
+
+	@Override	
+			
+		Override is a Java annotation used to tell the compiler that a method is overriding a method from a parent class or implementing a method from an interface.
+
+	@Component
+		-when we create custom class we can use this annotation 
+		-@component springboot will create the beans using autowire we can access the methods   	
+ 		-so component scanning will deduct the class  
+		
+		
+	@configuration 
+		
+		-we can create the we can write a customize logic inside that  @configration 
+		-using @bean annotation we can make the methods accessible by third party classes 
+				
+	
+
+	@bean
+		-it inside the configuration class 
+		-main usage managing "object" inside "object Container" 
+
+	@Value
+		it help to get the value from the application properties and used in for spring bean 
+		
+		application.properties
+				
+			app.name=MySpringApp
+		
+		in class
+			@Value("${app.name}")
+			private String appName;
+	
+
+
+	@restController
+		
+		its = @controller + @responseBody->
+		
+		@responsive body
+			-Send the return value of the method directly to the browser as the response
+			-it convert the return object to responsive format(json)	
+			-without this we can't send the data between the browser		
+
+	@controllr,@service,@repository,@Entity
+		
+		-spring component scanning mechanism automatically detect the component
+		-this are all use for we define based component based on the annotation 
+
+	@autowrired && @qualifier  
+		
+		@autowrired
+			-automatically inject object into class 
+		
+		@qualifier
+			-it used with a autowire when we have multiple bean(object) with same name 
+			-we want to get the exact one bean(object) we can use @qualifier 
+
+			
+			@Component("customService")
+				public class ServiceB implements MyService { }
+
+		// inject with
+			@Autowired
+			@Qualifier("customService")
+			private MyService myService;
+
+	
+	
+	
+	@Table, @Id, @onetoone
+		these are all called  table config annotation 
+
+	@PathVariable & @RequestParam @RequetBody @responseBody @RequetMapping
+	
+		@RequestParam 
+			the the value from parameters (?name=ebi) 
+		@pathVAriable 
+
+			used the get dynamic variable from url 
+
+			ex
+				getMapping(id/{id})------->name/id/1
+				
+		
+		@RequetBody
+			mostly using for post method get all the rerun values
+			
+	
+		@responseBody
+
+			-it part of @RestController 
+			-Send the return value of the method directly to the browser as the response
+			-it convert the return object to responsive format(json)	
+			-without this we can't send the data between the browser
+
+		@RequetMapping
+			it providing root level base path for rest api
+	
+
+	
+	@Transaction 
+		-using for manage the database transaction autometically 
+	
+	EX 
+		@Transactional(rollbackFor = Exception.class)
+	 
+
+		
+	-you can use this for class and methods in a service class 
+	-"work only on public methods"
+	
+		
+		-Transactional isolate
+			
+				@Transactional(Isolation = Isolation.REPEATABLE_READ)
+
+			-in normal hibernate do dirty check the data while updating reading DB
+			-if dont want to hibernate check the db data use  Transactional read only 
+			-it increase the performance 
+
+		-transaction readOnly
+				@transaction (readOnly =true)
+			
+			-it prevent the data modification in db  
+
+		
+ 
+
+-----------------------------------------------------------------------------
+
+dependency injection 
+	
+		-We do not create objects manually using "new".
+		-Spring creates objects automatically use in @Autowired (these are called beans). 
+	 	-this make code loosly coppled and make easy readablity 
+ 
+		
+
+
+type of dependency injection 
+	
+	-construction injection 
+		(we can access data using constructor) -mostly recommended 
+	
+	ex
+		@Autowired
+			Employee Emp
+		
+			constructorName(Employee Emp)
+			
+	-getter,setter injection 
+		(access by getter,setter methods)
+	ex
+		private Engine engine;
+
+    		@Autowired
+   		public void setEngine(Engine engine) {
+        	this.engine = engine;
+		}
+
+			
+	-field name injection  
+		(access by variables) 
+
+	ex
+			@autowired 
+				private Name name;
+-----------------------------------------------------------------------------
+classpath in springboot 
+	
+	-class path is file in spring boot   
+	-using for loading .class file, dependency ,and library ,jar file 
+	-in auto configuration based on the class path application will config 
+-----------------------------------------------------------------------------
+exception handling 
+	
+	1)@ExceptionHandle in controller 
+	2)global exception @ControllerAdvice
+
+	
+1)
+	-using "orElseThrow" (it throw the error )
+	-@ExceptionHandle is catch it and returns a custom response
+
+	ex
+		 @ExceptionHandler(UserNotFoundException.class)
+   		 public ResponseEntity<String> handleUserNotFound(UserNotFoundException ex) {
+        		return ResponseEntity.status(HttpStatus.NOT_FOUND).body(ex.getMessage());
+    		}	 
+	
+2)global Exception 	
+	
+	-using @restcontrolerAdvice we can provide the exception all the controller 
+	
+	
+	@RestControllerAdvice
+
+	public class GlobalExceptionHandler {
+
+    	@ExceptionHandler(UserNotFoundException.class)
+	
+    	public ResponseEntity<String> 	handleUserNotFound(UserNotFoundException ex) {
+        	return ResponseEntity.status(HttpStatus.NOT_FOUND).body(ex.getMessage());
+    	}
+	
+	
+-----------------------------------------------------------------------------
+inversion of Controller (Ioc)
+	
+	-IOC is design principle of framework where to  object create and manage the object lifecycle
+	-IOC is help for Dependency injection  
+	dependency injection is practical way to implement the Ioc
+     
+-----------------------------------------------------------------------------
+component scanning 
+	
+	it tell the spring its process of finding the beans like @Component @Controllers 
+	@Service
+	
+-----------------------------------------------------------------------------
+devtools dependency 
+	
+	it help to atomically retart the application live reload,fast refreash  
+
+-----------------------------------------------------------------------------
+Lombok 
+	-it automatically create a setter and getter and constructor 
+	-using @data Annotation 	
+		
+	@data = setter,getter,hashcode
+	@Allargconstructor = 
+	@Noargconstructor
+	@setter
+	@getter
+	
+
+-----------------------------------------------------------------------------
+	 
+
+configuration
+	-we can customize the application without making any changes in source code 
+	
+we can configure using this options 
+
+		1)application.properties and application yml
+		2)external configuration 
+		3)profile
+		
+	
+	1)application.properties and application yml
+
+		application.properties
+			-application.properties for config the application 
+			-using key value pairs 
+
+		ex
+			server.port=8081
+			spring.datasource.url=jdbc:mysql://localhost:3306/test
+
+
+	
+		application yaml	
+			-same like application.properties but we use Hieratical indentation based 
+			-mostly we use this one because more readability 
+
+			
+		ex
+
+			server:
+  				port: 8081
+
+			spring:
+  				datasource:
+    					url: jdbc:mysql://localhost:3306/test
+
+
+	2)external configuration 
+		
+		-it like environment variable 
+		-you can store the value outside of the code  
+		-u can store the file command line arguments,application.properie
+		-mostly using for cloud deployment and docker  
+
+
+		using environmental variable called '	
+			export SPRING_DATASOURCE_URL="jdbc:mysql://localhost:3306/proddb" ----------->Linux/mac
+			setx SPRING_DATASOURCE_URL "jdbc:mysql://localhost:3306/proddb" ------->window
+		
+			
+
+
+		using this java 
+			java -jar myapp.jar --server.port=8085
+		
+		we can overriding the  value 
+
+
+
+	3)profile 
+		
+		-profile means every application has configuration class 	
+		-in real time we need to use a different configuration(dev,test,prod) class for one application  
+		-do if want to run the application with different configuration class without touching the code we use profile
+		-different configuration class means 
+			-dev(development)
+			-testing 
+			-prod(production)	
+
+		in application.yml
+		
+			spring.profile.active = dev
+
+		in configuration class 
+		
+			@profile("dev")
+			
+
+
+-----------------------------------------------------------------------------
+different b/w JDBC and application. Properties db connection 
+		
+	JDBC
+		-we have to connect and execute the query using in a code 
+
+	application. Properties
+		 
+		-use to store a configuration including DB details 
+
+	
+-----------------------------------------------------------------------------
+
+starter 
+
+	-it's prebuild dependancy pakeage  (spring.boot.starter)
+
+		<dependency>
+    			<groupId>org.springframework.boot</groupId>
+    			<artifactId>spring-boot-starter</artifactId>
+		</dependency>
+	-without this 
+		u have to createa a 
+			-own server like tomcate
+			-Logging libraries
+			-spring mvc	
+
+
+	1)(spring.boot.starter.web)
+		help to build a web service (REST) using Spring mvc
+
+	2)spring.boot.starter.data.jpa
+		enable the jpa repository
+	
+	3)spring.boot.starter.security
+		give auntentication and jwt tocken for the web page
+
+-----------------------------------------------------------------------------
+spring security 
+
+	spring security provide the authentication and authorization for a application 
+		
+	authentication 
+		-we can authenticated based on the username and password 
+		-jwt tocken 
+		
+	authorization 
+		-it check the user allow to make changes in the application 
+		-like admin only remove the user like that 
+	
+		@preAuthorize("hasRole('ADMIN')") 
+		@PostAuthorized
+		@secure
+		@RollesAllowed 
+	
+	spring provide multiple way to authenticated the application 
+	
+		-like JWT
+		-CSRF ->CROSS SITE request forgery------------------>session level authentication when we disable it we use JWT tocken 
+		-cors ->cross origin resource sharing  --------------->To prevent websites from calling APIs without permission.
+		-Oauth
+			
+
+-----------------------------------------------------------------------------
+-how to enable  a security 
+
+		-add dependency called spring security 
+		-and create configuration class with @EnableWebSecurity 
+		-and create method With "SecurityFilterChian"
+		-and we can give authenticate using a "requetMatcher('/home').permitAll" and requetMatcher('/login').Authonticated
+		-inside that we can enable the "CSRF" 
+		-using bcrypasswordEncoder we can encrypt the password 
+			 
+
+-----------------------------------------------------------------------------
+default user name and password
+	
+			   user 
+		password : 12345	
+
+-----------------------------------------------------------------------------
+method level security 
+		
+		-we enable the method level security when api security is not enough 
+		-we can create a authentication for individual method in spring boot
+	using 
+		@preAuthorize ,@postAuthorize ,@Secured  ,@RollesAllowed 
+	
+	  1) @preAuthorize
+		it check the permission before method execute
+	
+		ex
+			@preAuthorize("hasRole('ADMIN')") 
+			public void deleteUser() { 
+			
+			}
+		-it allow only admin 
+	
+	 2)@PostAuthorized
+		
+		-it check the permission after method execution 
+		
+		-why after because it check return value matches the authentication value 
+		-in data base has usename u what to all the the user only in database in that case u can user postAuthorized
+	
+		ex
+		 @PostAuthorized("returnObject.name == authorization.name")
+		 public user id(int id){
+  			
+			return userService findbyId(id)   //id match the authentication it give a permission  
+
+		 }
+	
+	3)@secure
+			
+		@Secure("Admin")
+
+		-simple role check 
+		-different between preAuthorized () and @Secure("Admin")
+		-in preAuthorized () we can use expression like (== === <) like that but @Secure("Admin") simple user check 
+		-preAuthorized () it recommended 
+	
+	
+	4)@RollesAllowed 	
+
+		-similar to security
+		-it part of JSR-250 java (ee)
+
+		
+-----------------------------------------------------------------------------		
+
+jwt token 
+		
+	-it alphanumerical token with HEADER.PAYLOAD>SIGNATURE
+	-it authentication between client and servicer 
+	-using JWTutill class we can generate the JWT token 
+	-inside the JWTutill class we can give the expiry time using (System.currentTimeMillis() + 1000 *60)
+		
+	how it work 
+		
+		-User sends username + password.
+		-If username/password correct → server creates a JWT token.
+		-Server Sends JWT Token to User
+			-User stores it in:
+			-browser localStorage
+		-Server Verifies the JWT Signature
+
+
+
+		 
+
+				
+-----------------------------------------------------------------------------
+how to implement the basic Authentication in spring boot 
+		
+	-implement the security dependency 
+	-and create configuration class with @Configuration and @EnablewebSecurity
+	-and using a request.matcher()parmitall and request.matcher().authenticated u can give a permission 
+	-and enable or disable the csrf() baed onthe requirement 
+
+	-when u use JWT u disable the CSRF() 
+	-because CSRF() is using session authentication Jwt is mannualy create token better disable it  
+		
+-----------------------------------------------------------------------------
+Oauth 
+	it method of without using password  we can login into a app using facebook and  google 
+		
+	implementation 
+		
+		-add oAuth2 dependency 
+		-go to google cloud console webpage 
+		-get the id and secret-key 
+
+		in side the application.property
+			spring.security.oauth2.client.registration.google.client-id=YOUR_CLIENT_ID
+			spring.security.oauth2.client.registration.google.client-secret=YOUR_CLIENT_SECRET
+			spring.security.oauth2.client.registration.google.scope=profile,email
+
+
+		-and inside the configuration class 
+				
+				.oauth2Login(); using this for enable the Oauth2	
+		
+
+	
+-----------------------------------------------------------------------------
+
+spring messaging 
+	
+		-it process of sending and receiving the them message asynchronously 
+  		-using broker like a IBM mq and rebbitmq,kafka
+
+configuration for IBM mq 
+
+
+		1)rabbit mq
+			
+		<dependency>
+    			<groupId>org.springframework.boot</groupId>
+   			<artifactId>spring-boot-starter-amqp</artifactId>
+		</dependency>
+
+			
+		application.propertoies
+
+			spring.rabbitmq.host=localhost
+			spring.rabbitmq.port=5672
+			spring.rabbitmq.username=guest
+			spring.rabbitmq.password=guest
+
+		
+		congifuration calss 
+			
+			
+		  @Autowired
+    			private RabbitTemplate rabbitTemplate;
+
+    			public void sendMessage(String message) {
+        		rabbitTemplate.convertAndSend(RabbitConfig.EXCHANGE_NAME, RabbitConfig.ROUTING_KEY, message);
+        		System.out.println("Sent: " + message);
+    		}
+
+		
+		   @RabbitListener(queues = RabbitConfig.QUEUE_NAME)
+    			public void listen(String message) {
+        		System.out.println("Received: " + message);
+   		 }
+-----------------------------------------		
+		2)add mq-JMS dependency from the "starter" 
+		
+		<dependency>
+    			<groupId>com.ibm.mq</groupId>
+    			<artifactId>mq-jms-spring-boot-starter</artifactId>
+    			<version>2.7.1</version>
+		</dependency>
+	
+	2)config the application properties 
+		ibm.mq.queueManager=QM1
+		ibm.mq.channel=DEV.APP.SVRCONN
+		ibm.mq.connName=localhost(1414)
+		ibm.mq.user=app
+		ibm.mq.password=passw0rd
+		ibm.mq.queue=TEST.QUEUE
+
+
+	3)create a configure class 
+		
+			@Configuration
+			public class MqConfig {
+
+    			@Bean
+    				public JmsTemplate jmsTemplate(ConnectionFactory connectionFactory) {
+        				return new JmsTemplate(connectionFactory);
+    				}
+			}
+		
+	4)send and receive message 
+
+	i)sending
+		@Autowired
+			private JmsTemplate jmsTemplate;
+
+			public void sendMessage(String message) {
+    				jmsTemplate.convertAndSend("TEST.QUEUE", message);
+			}
+
+	ii)receving 
+	
+	receive the message  (for reciving we need to use a @JmsListner) 
+			
+		@JmsListener(destination = "TEST.QUEUE")
+
+		public void receiveMessage(String msg) {
+    			System.out.println("Received: " + msg);
+		}
+
+
+
+-----------------------------------------------------------------------------
+way building a rest apis in spring boot 
+	
+		1)using spring MVC
+		2)spring webflux (reactive) 	
+
+	there is tow type of way we can build a web apis 
+		
+
+using mvc 
+	-mvc is web framework to build a rest api 
+	-work under the MVC architecture 
+	-it handle the request synchronously, 
+	-using many thread for request   
+	
+	ex
+		
+	@getMapping('/')
+	public String a(){
+		
+		return "ebi"
+	}
+	
+	
+reactive programming (webflux)
+	
+	-it handle huge amount request  with minimal thread 
+	-it using "mono" and "flux" for handle the data 
+ 	-it process the request asynchronously  
+
+	
+	implementation 
+		first add start starter dependency 
+
+		<dependency>
+    			<groupId>org.springframework.boot</groupId>
+    			<artifactId>spring-boot-starter-webflux</artifactId>
+		</dependency>
+
+
+		
+	
+	ex
+		@getMapping('/')	
+		public Mono<String> a(){
+			return mono.just("ebi")
+		}
+
+	
+-----------------------------------------------------------------------------
+
+diffrent between mono and flux 
+	
+	-both are reactive program methods 
+	-used for handle the request asynchronously 
+	
+	
+mono		
+
+	-is handle the data 0 to 1 (return the 1 value )
+	-we can use for cheaking the id is some are not 
+	
+	
+	@getMapping(/{id})
+	
+	public Mono<User> a(@pathVariable int id){
+	
+		return mono.justOrEmpty(
+			  userList.stream()
+                    .filter(user -> user.getId() == id)
+                    .findFirst()
+		)
+	}
+
+	
+flux
+	-it using for return the 0 to many 
+	-using for iteration 
+	
+	@getMapping(/)
+		
+	public flux<user> a(){
+		return flux.fromIterable(usetData)
+	}
+
+-----------------------------------------------------------------------------
+error handling in webflux
+	
+	-bit different from the traditional way 
+	-some like we can handle exceptoin inside the class and globally 
+
+inside the class 
+	
+	 u can use   @ExecptionHandle 
+ 
+
+	ex
+	.switchIfEmpty(Mono.error(new UserNotFoundException("User not found")))
+        .onErrorResume(UserNotFoundException.class, e ->
+            Mono.just(new User(0, "Unknown"))
+        );
+
+	 
+global exception 
+	instead of using ResponseEntity use mono<ResponseEntity<String>>
+
+	
+ex
+	@RestControllerAdvice
+public class GlobalExceptionHandler {
+
+    @ExceptionHandler(UserNotFoundException.class)
+    public Mono<ResponseEntity<String>> handleUserNotFound(UserNotFoundException ex) {
+        return Mono.just(ResponseEntity.status(HttpStatus.NOT_FOUND)
+                                        .body(ex.getMessage()));
+    }
+	
+	
+-----------------------------------------------------------------------------
+	
+spring cloud 
+	
+	-spring cloud is build on top of the spring boot 
+	-spring cloud the frame work that use to build ,mange the microservices easily 
+	-it give a essential components (eureka , load balancer , gateway, circuit braker ,sleuth(tracer)  )
+	 	 
+	
+	spring boot --->used to build a microservices 
+	spring cloud ----> used to manage the microservices 
+	
+	spring give this service 
+		-service registry   ->Eureka *
+		-load balancer 
+		-API gateway
+		-communication ---->feign client *
+		-circuit breaker *
+		-sleuth + zipkin (trace & monitoring) *
+	
+		
+i)service discover  ->Eureka *
+	-eureka is is serveice registory provided by third party library (Netflix)
+	-using this eureka without the hostname and port number we can access the url  
+	-in real time we use a N numbers of endpoint with different port numbers 
+	-we cant remember the all port number instead of that we use to store all endpoint in eureka server 
+	-and usesing eureka clint we can access the url without port and host name 
+
+		
+	for enable it 
+		-first create a eureka server  
+		-add eurekaserver dependency	
+		-in main class add @EnableEurekaServer
+		-config the application.yml
+		-after run the application 
+		-and open the eureka console in browser		
+		
+	 
+		-and create the eureka client 
+			-create a new project for client a with "eurekadicovery" dependency 
+			-in main class @EnableEurekaClient
+			-config the application.yml for client 	
+	
+		
+	
+			 
+	
+
+ii)load balancer 
+	-it one of the core concept of micro services 
+	-it distribute the incoming request to multiple servers 
+	-increase the performance and prevent the overload the server 	
+	
+	real time example 
+	
+		-add to cart 
+		-all over time world they add multiple items in a cart 
+		-so load balancer distribute all instants to multiple servers keep the application in high performance   
+
+	
+	implementation 
+		-add loadbalancer dependency 
+		
+		-add the "ribbon" or "cloud loadbalancer (modern java )" dependency for handle the load balancer in client side 
+ 		
+		ex
+			using @Loadbalancer and @RibbonClient(name = '' , configuration = )  but it deprecate 
+		
+		-new spring use  web.clientBuilder 
+	
+	-create @configuration class with @loadbalancer 
+	-and create a web.clientbuiler method 
+	
+	ex
+	
+	@Configuration
+		public class WebClientConfig {
+
+    		@Bean
+    		@LoadBalanced
+    		public WebClient.Builder webClientBuilder() {
+        		return WebClient.builder();
+    		}
+	}
+
+	
+	using auto wire call the method we use the load balancer 
+	
+	
+	
+	
+	
+		
+		
+
+
+iii)API gateway 
+	
+	-gate way know which microservice handle the which api
+	-gateway is help to route the api 
+	-client send the request gateway check the authentication  like jwt(token) , api key
+	
+	implementation 
+		
+		-if u want to access your resquest throw gateway u have to host the requent in cloud that is called "elastic bean stack"
+		-first create jar file for your   application 
+		-and deploy the jar file into a "elestic bean stack" cloud 
+		-it provid a "elestic bean stack" end point of your application 
+		
+		-using this end point we can create gateway endpoint uding aws gatway 
+	
+	
+	different between the eureka and gateway 
+	
+		eureka 
+			-using for service registry  
+			-it will not check the JWT Token 
+		gateway 
+			-it a single entry point for all services
+			-it will check the jwt token   	   
+		 
+		
+ 
+
+iv)communication (feign client) 
+	
+	using feign client we can communicate the microservice to microservices 
+		
+		add dependency "openFeine"
+	@FeignClient(name = "microservicename" url = "url")
+	
+	
+	
+	way of communication  
+			
+			simple communication  - using rest template 
+		
+			complex communication  - feign annotation 
+		
+			asynchronous communication  - message brokers like RabbitMQ ,kafka, ibm mq
+
+v)circuit breaker 
+	
+		-in microservices one service if one  service down it make all service down and crash 
+		-it called cascading 
+	
+	ex 
+		-if product service called order service 
+		-if product service id down all order service hang or crash 
+	
+	
+	
+	circuit brake
+		-if circuit deduct failure
+	 	-it automatically called getFallback method instead of calling actuall product method useing @CircuteBreaker(name = "" ,fallbackmethod = "" )
+
+	@CircuitBreaker(name = "productService", fallbackMethod = "getFallbackProduct")
+	
+	public Product getProduct(int id) {
+    		return productClient.getProduct(id); // Feign call
+	}
+
+	public Product getFallbackProduct(int id, Exception e) {
+    		return new Product(id, "Default Product", 0);
+	}
+
+		
+	-real time example 
+		
+		-if we call the external api if the rate limit is over for the api 
+	 	-we can use a circuit breaker run the application without crashing the website 
+	 
+	
+	
+	 
+vi)Sleuth /Zipkin
+	
+	-in microservices one request travel across multiple services 
+	-it had to trace and debug 
+	-using trace id span id using this id we can trace ( generate automatically ) 
+		
+		trace id(it for entire journey)
+		span id (it for every service call )
+	
+	
+	if u want to print the trace id 
+		
+		add the cloud.sleuth dependency 
+		import sleuth from the cloud package
+		
+		import org.springframework.cloud.sleuth.Tracer;
+			
+		 String traceId = tracer.currentSpan().context().traceId();
+       		 String spanId  = tracer.currentSpan().context().spanId(); 
+	
+	
+ 	
+
+	zipkin
+		
+		-Zipkin is ui dashboard for show service record 
+	 	-it will show the time take for each service , failure 
+		-
+
+	
+implementation 
+	
+		-add sleuth and zipkin dependency 
+		
+
+-----------------------------------------------------------------------------
+inner service communication in microservices 
+	
+	-using "rest template"(post,get,put,delete)
+	-feign annotation (using feign client)
+	-asynchronous communication (message broker)  
+-----------------------------------------------------------------------------
+	
+caching mechanism
+	
+	-caching mechanism means we can store the data in catch memory 
+	-and we can directly call the data from catch instead of database 
+		
+	in spring we can use a @catchenable and @catchput @catchevict @catchable 
+		
+		
+	@catchable - want to store the data in catch 
+	@catchput - update the data 
+	@catchevit - delete the data  	
+	
+-----------------------------------------------------------------------------
+	
+what are the steps u take for application face the high performance issue 
+	
+	-first i find out what service take high performance issue using a actuator and Splunk
+	
+	-actuator ising foe health check
+	-splunk is using for logging and monitoring 
+	
+
+	-after find out the issue optimizing the database and implement the catching mechanism   
+		
+	   
+
+-----------------------------------------------------------------------------
+Rest api versioning
+	
+		-versioning means we update the url without affect the old response 
+	  	
+	for ex
+		-old api return the old response  (api/v1/product)
+		-and u update the response and release the new api (api/v2/product)	
+		
+		-if u update the api with same url it will crash the website
+		-with versioning we a can release the api  it wont crash website 
+
+	
+	versioning types 
+	
+			-url versioning    			-parameter versioning
+			-header versioning
+			-media type versioning 
+		
+	 		
+	
+	i)url versioning 
+		-normal way (api/v1/product) like this 
+		-but conflict when u add to many versioning
+			like 
+				api/v1/product
+				api/v2/product
+				api/v3/product
+	
+	ii)parameter versioning
+		mentioning the version in parameter this use widely in real project 
+	
+				
+			@requetmapping(api/product)
+				
+			@getmapping(params = 'version=1' )
+			
+	iii)header versioning 
+			
+		-instead of we give the versioning in parameter or url  
+		-i give as a header 	
+	
+		@getmapping(header ="API-header=1")
+
+	iv)content negotiation  vesioning 
+				
+		-in content type it store the Api versining inside the content type 
+		-like content-type : application/json	
+
+			
+		if url is(/v1/products) 			
+			
+    		-@GetMapping(value = "/products", produces = "application/vnd.company.v1+json")
+		
+		-for that 
+		
+		
+-----------------------------------------------------------------------------
+	
+conditional annotation 
+		
+		conditional annotation cheak the condition based on true of false 
+	
+		@ConditionalOnproperty
+		@ConditionalOnclass 
+		@conditionalonmissingbean
+		
+
+@ConditionalOnproperty
+	using for only the get the value from the application.propertie 
+	
+		app.sms.enabled=true
+  		
+	@ConditionalOnproperty(name = "app.sms.enabled" HavingValue="true")
+	
+@ConditionalOnclass
+	
+		it get the value from the classpath 
+	
+	@ConditionalOnclass (name = "com.mysql.cj.jdbc.Driver")
+	
+	
+@conditionalonmissingbean
+
+	
+	
+-----------------------------------------------------------------------------
+how to increase the performance in spring 
+	
+		-using catch mechanism	
+		-using asynchronies message system   
+		-using load balancer 
+		-webflux  - meno and flex
+		
+
+-----------------------------------------------------------------------------
+spring testing 
+	
+	-for testing u have to add the started-test dependency 
+	 
+		
+	
+	-unit testing 
+		-testing a single methods or class
+		-it wont test any server and DB 
+	
+	
+		-using "Junit + mackito" 
+
+	-mackito
+		-mackito is framework it create a dummy repo for unit testing 
+ 		-it helps to test the class without creating a dependency and Db, repository 	 
+	
+	-junit 
+		-it testing framework 
+		-used to it automatically find the test block using @test annotation  	
+		
+
+		
+			
+implementation 
+	
+	-add start-test dependency 	
+	-inside the test package create a class 
+	-create a dummy repository(bean) using @MockBean @Autowire
+	-create dummy bean outside of the application @mock @ijectMocks
+	-and create testing unit @test annotation 
+	-using @test Junit automatically find out the testing block  	
+
+	
+	-using "assertvalue" we can check the expected value equals to actual value 
+	
+	
+	
+	
+	
+	@test
+	void add(){
+		 int result = 2+ 3;
+		
+		assertValue(5,result )  //if result value == 5 testcase will pass
+	}			
+				
+--------------------------------------				
+			
+	-unit test 	
+		-we check the single component check only login
+		-this component no need to connect multiple component for this test 
+		-we take the small part of the code and check the business login 
+		hear we using a Mockito (@mock ,@mockbean) 	
+	
+	-integration testing 
+			
+		-after testing single method and class 
+		-test the complete flow like controller ,DB ,Service ,repo
+	
+		-using @SpringBoottest 
+	
+	-controller test (web layer test)
+		
+	 	-testing only the control layer 
+	 	
+		using @WebMvcTest
+	
+	
+	@reppository test (jpa)
+	
+		-test the database query 
+		-using @DataJpaTest
+
+
+-----------------------------------------------------------------------------
+how to create a mock external service in spring boot test 
+	
+	-using @mockbean we can create a mock external service in spring boot 
+	-using @mockbean spring replace the actual bean with already existing beans
+	
+	-and mokito framework helps to create a mock object without dependency and Db  
+	
+	
+	
+-----------------------------------------------------------------------------
+how to to spring choose a server to use ?
+	
+	-spring boot made decision based on the dependency we invoke 
+	-in auto configuration select the server based on the dependency (like ,jetty and undertow)
+	- other wise spring boot choose the default server "tomcat"
+-----------------------------------------------------------------------------
+	
+how to get a list of beans in spring boot 
+	
+	1)@autowire and ApplicationContext
+	
+		implementation 
+			
+			@autowire 
+				
+			private ApplicationContext context 
+	
+				
+			string beans = context.getbeandefenitionnames();
+			
+			for(String bean : beans){
+				s.o.p(bean)
+			}
+
+			
+	2)using Actuator (easy way )
+		
+		-add Actuator dependency from "starter" 
+		-and config the application.properties (management.endpoints.web.exposure.include=beans)
+		-run the application 
+		-hit this url (http://localhost:8080/actuator/beans)
+			
+	
+
+
+-----------------------------------------------------------------------------
+
+AOP - aspect oriented programing 
+
+		-AOP means we can create a common logic instead of writing a some logic in every class 
+		-mostly using for implementing a (logging ,security, transaction )
+		-and we can execute the login in three way using (around , before ,after) keywords
+
+		-around 
+			-it execute before and after 
+		-after 
+			it execute after the execution 
+		-before 
+			it execute before the execution 
+	
+-we can create aspect class using a @aspect , "(proceedingToJoin poj)" , @Around ,@Before , @After 
+	
+and using 
+			
+	 Object result = pjp.proceed();   //we can execute the method inside the aspect class 
+	
+		
+	
+	implementation 
+	
+		@Aspect
+		@Component
+		public class LoggingAspect {
+
+    		@Before("execution(* com.bank.service.*.*(..))")
+    		public void beforeAdvice() {
+        		System.out.println(">>> Before method");
+    		}
+
+    		@After("execution(* com.bank.service.*.*(..))")
+    		public void afterAdvice() {
+        		System.out.println("<<< After method");
+    		}
+	
+
+			return value;
+	}
+		
+-----------------------------------------------------------------------------
+what is concept of embedded server container
+	
+	-spring embed server container in spring has inbuild servers like a (tomcat ,jetty , undertow)
+	-These servers run inside your application, so you don't need an external server installation.
+	-default server is a tomcate
+	-this a one of the feature spring framework doesn't have 
+-----------------------------------------------------------------------------
+how spring manage the sensitive data secretly when we use third party application 
+	
+	-spring using properite,ymal file to handle the third party apps details 
+	-manage without hard code using "hashicorps" tools 
+	-this make spring secure  
+	
+	
+	 
+-----------------------------------------------------------------------------
+@Async annotation 
+	
+	-it means we run a method asynchronously 
+	-we run a separate thread in background it own affect the current running process 
+	
+	we can use for 
+		-sending email(some time it take long time we can run the task(thread) separately i background)
+		-downloading/uploading 
+		-calling external api 
+		-heavy process
+
+	-Without @Async, these tasks block the request.
+	-With @Async, they run in background.
+		
+	
+implementation 
+	
+	-using @EnableAsync annotation in main class 
+	-in service class use @aync annotation in service methods
+
+
+-----------------------------------------------------------------------------
+
+how to upload a file in spring boot
+
+ 
+ 		-using post request and "multipartFiler" parameter we can upload the file
+ 		-for multiple file uploader we can use "MultipartFile[]" parameter
+ 
+
+
+  @PostMapping("/upload")
+    public String uploadFile(@RequestParam("file") MultipartFile file)
+	
+
+-----------------------------------------------------------------------------
+authentication /atheization
+	
+	
+	-authentication means give allow to use the website or app if user id and password is right 
+	-atheization means we allow the some part of the website based on the role like give permission to admin for some places 
+	
+-----------------------------------------------------------------------------
+how to send to send a mail to user after register successfully 
+	
+	-first add a mail dependency from starer pakage 
+	-in application.properties config the file based on username, password(gendrated by google), host, port,
+	-and in service using "simplemailMessage" object we can send th email 
+	
+	
+	ex
+		SimplemailMessage meg  =new SimplemailMessage();
+
+
+-----------------------------------------------------------------------------
+how to disable the specific autoconfiguration 
+		
+	-for example u want to disable the dataSource Auto configuration
+  	-use have to configure the @springbootapplication using "execute" keyword
+
+	ex
+		@springbootapplication(execute = {datasourceAutoconfiguration.class})
+
+-----------------------------------------------------------------------------
+
+different between cache evict and cache expiry?
+	
+	-cache evict we delete the data from a cache memory 
+	-cache expiry it automatically delete the data once the expiry time reach  	
+-----------------------------------------------------------------------------
+spring redis (session distributed system)
+	
+	-in distributed system means centralized session storage
+	-for ex if login with server A session store in server A only 
+	-if u go another page like "cart page" it doesn't no the user is login or not 
+	-so we store the login session in centralized place that is radis 
+	-it will distribute all session data to all server    
+	
+	
+	
+	
+  different between jwt and redis 
+	-jwt is using for securing transaction between the client and server 
+	-redis is using for distributing the session data throughout the servers
+-----------------------------------------------------------------------------
+	
+if the rate limit is over for api how to handle the issue 
+		
+	-using circuit breaker 
+	-and using cache memory for reducing the number of request 
+	
+
+-----------------------------------------------------------------------------
+how to build a non web application in spring boot 
+	
+	-not web application is doesn't start a web server 
+	-it run like normal java console application   
+	
+	
+using "commondlinerunner" interface for right business logic it run without starting web server 
+
+-----------------------------------------------------------------------------
+what is intranalization or (i18n)
+	
+	-it can support multiple speaking language like (Tamil ,English, French )
+	-by creating and  modifying the .properties file  
+	-we can create multiple fie for different language 
+		
+	ex	
+	src/main/resources/messages.properties 
+	src/main/resources/messages_tamil.properties 
+	src/main/resources/messages_frech .properties 
+	
+	
+	application.properies
+		
+		greeting=Hello!
+		greeting=வணக்கம்!
+-----------------------------------------------------------------------------
+what is docker image and how to create it 
+		
+	
+	-docker image is contain every thing to application run like code, dependencies, libraries, configuration, and runtime.
+	-it "read only template" so docker container read the data from docker image 
+	-it act like blue print for docker container 
+	
+	
+how to implement 
+	
+	-using Jenkins we can create a docker image automatically
+	-first push the code in to GitHub repo  
+	-u need to install Jenkins
+	-then run the Jenkins using command "java jar junkins.war"	
+	-then using git repo url u can create a docker image 
+	
+	
+	
+this automated way of building a docker image 
+	
+we can create manual docker image also 
+		
+		using command like 	
+			docker build -t myapp .
+			docker run -p 8080:8080 myapp
+			
+		
+	
+-----------------------------------------------------------------------------
+elastic search
+	-elastic search is a open source search and analitics engine 
+	-build top on the apache lucene engine 
+	-used for store analyze and search in large valume data	
+	-Elasticsearch stores data as JSON documents and provides a RESTful API to perform fast searches	 
+	
+-----------------------------------------------------------------------------
+elastic search component --------importent-----------------
+	
+	-index 
+	-document 
+	-shared
+	-replica
+
+	
+index (imagine its like table in sql) 
+	-in normal(traditional) way we store a data into a database in table 
+	-but in selestic search we store a data in a index 
+	-it more flexible and faster because it store in JSON DOCUMENT 
+
+-document (imageing it like a data in a table)
+	-in traditional way we store a data in row and column table formate in sql
+	-that have fixed column for row it like a fixed structure 
+	-in eleatic search we store data as a document in json object 
+	
+shared	
+	-In SQL, all data for a table usually stays on one machine, so when data grows, performance decreases
+	-in elestice search shared autometically slpit the index(imagine its like table in sql) into a shared which means split into a multiple servers 
+	-This allows Elasticsearch to handle large data and search very fast using parallel processing.
+	
+replica
+	-in sql we need to mannually take a backup 
+	-in elastic search it autometically take backup and store in diffrent nodes
+	-If one node fails, the replica takes over immediately providing faster search.
+-----------------------------------------------------------------------------
+installation process
+	 -download the elestc search zip file 
+	 -anf go to the config --->elasticsearch.yml
+	 -config the name and path (cluster.name: ebi-elestic-serach) && (path.data: D:\projects\elestic search node data)
+	-and go to bin "cmd" give elasticserearch.bat for run the eleastic search 
+	
+	
+	-and in spring add a "elastic serach" ,devtools, dependancys 
+	-and create a repository for elasticsearch ""
+	
+		ex
+			repository extands Elastcsearch<customer , string>   
+	
+		
+	-create document(like table)
+			@document(indexName="firstEleastic" , type ="customer" , shared =2 )	
+			public class Customer {
+				
+				@id
+				private String id;
+				private String name;	
+				private int age;
+				
+			}
+		
+		
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Ebinazer Selvaraj <ebinazerselvaraj206@gmail.com>
+21:26 (3 minutes ago)
+to Ebinazer
+
+1)what is pom.xml (project object model)
+-this file used by maven
+-to manage your project
+-it a xml file that define
+-project info  
+-dependency
+-versions
+2)What is Spring Boot? How is it different from Spring Framework?
+3)What are the advantages of Spring Boot?
+
+4)what is maven
+-maven project management tool  
+-used
+-Manage project dependencies
+-Compile source code
+
+without maven
+
+-Downloading JAR files manually
+-Managing versions yourself
+
+5)maven life cycle
+
+-Clean
+-Build-(Default)
+-Site
+-Clean
+Deletes the previous build files
+When you update code and rebuild, old compiled files may cause conflicts.
+
+-Build(Default)
+
+-Checks if project structure is correct
+-Compiles source code
+-Runs unit tests
+
+-Site
+-it use to generate the project document
+-Maven generates HTML pages that include details
+-Project information (name, version, description)
+-Dependencies used
+
+-for that we need to install the maven and run this commond  "mvn site"
+
+
+6)what is dependency management in maven
+when we add a dependency "<artifactId>spring-boot-starter-web</artifactId>"
+
+-Spring MVC jars
+-Jackson (for JSON)
+-Embedded Tomcat
+-All other required libraries for this starter
+
+7)What are Spring Boot Starters? Why are they useful?
+
+-starter was introduce in spring boot
+-it help to add dependency with minimal xml config
+-with starter ex starter.web it contain mvc,rest api,tomcateserver
+
+8)can we add dependency only for tomcat server
+yes we can
+using "spring-boot-starter-tomcat" with this it only contain the sever library
+
+
+9)what is IOC/@bean
+
+10)different type of dependency injection
+
+11)different between @component and @configuration class
+
+12)What is @SpringBootApplication?
+
+13)tell me some annotation u no
+
+14)why we use a spring boot over java
+-spring boot have autoconfiguration ,and embed server
+-production-ready applications faster,
+
+using java
+u need to write every thing from the scratch slow/hard to maintain
+
+15)What happens internally when you run a Spring Boot application?
+
+-auto confiuration
+-Dependency Injection
+-start the embedded server
+-application ready
+-actuator
+
+16)h2database
+
+-for access "http://localhost:8080/h2-console"	
+ 	
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+	
+	

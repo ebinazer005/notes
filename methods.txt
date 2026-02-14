@@ -1,0 +1,16 @@
+includes() -------->using for check the if some thing exist or not 
+	
+	ex 
+		const invalid_email = !statevalue.email.includes('@');
+
+		<p>{invalid_email && <p>invalid email</p>}</p>
+
+FormData()
+	-get()
+	-getAll()	
+	-Object formEntries(FormDataVariable.entries());
+
+
+html input validation 
+	-require 
+	-minLenght={6};---------->this is for password 

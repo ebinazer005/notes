@@ -1,0 +1,296 @@
+what is redux?
+	-redux is third party library 
+	-Redux is a "state management library"
+	-It make data centralize for all component (data).
+	-Instead of passing props deeply between components or having each component manage its own state, Redux stores the data in a single global store.
+
+
+we can use use context for that 
+	-but usereducer great for smell level application based in the budget we have(small level) if we use redux in small app it reduce the performance it cause extra renders. 
+	-redux is for a large level application and complex apps. 
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+flow of the redux 
+	reducer function<---------------^
+		|	 		|
+	central data (store)	     actions
+		|			^
+	components			|
+		|---------------------->|
+		 
+
+
+
+	*******reducer is common function is not a hook********* 
+
+
+reducer function 
+		
+		-this function accept two parameters one for "old state" "delivered state" it return 
+-A reducer in Redux is just a function that:
+
+-Takes the current state and an action
+
+-Decides how the state should change
+
+-Returns a new state
+		
+		const ReducerFunction=(state,action)=>{
+
+			}  
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+for create a redux 
+	
+		for install package 
+			-npm install redux react-redux
+
+
+**************for importing  redux*****************
+		
+		const redux =require('redux');
+			
+			
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+redux methods
+ 
+	
+	-store.getState()
+		store.getState() returns the current state of your Redux store
+	
+	-store.subscribe(subscribeFunction);
+
+		it tell react “Whenever the state in the store changes, run this function (subscribeFunction).”
+
+	-store.dispatch()
+		-dispatch is a method of the Redux store.
+
+		-Its job: send an action to the store.
+
+		-Think of it as telling Redux: “Hey, something happened — update the state!”
+
+
+sample code 
+
+	//import 
+		const redux = require('redux');
+		
+	//create reducer Function 
+			
+		const counterReducer = (state={counter:0},action )=>{
+		
+			if(action.type == 'INCREMENT'){
+
+				return {
+				counter:state.counter +1
+				}
+			}
+
+			return state;
+			
+			
+			
+		}
+
+
+	'//create store 
+		const store = redux.createStore(counterReducer);
+
+	
+	//create subscription function 
+		
+		const conterSubscription=()=>{
+			const leatestCounter = store.getState();
+		
+			console.log(leatestCounter);
+		}
+		
+		
+		store.subscribe(conterSubscription);
+
+	//create action 
+		
+		store.dispatch({type : 'INCREMENT'});
+		
+		
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+using redux in react app 
+
+	installation 
+	
+		npm install redux react-redux
+
+
+	create store folder
+
+		reduxIndex.js
+	
+	import {createStore} from 'redux';
+
+	
+	const counterReducer =(state ={ counter: 0 } ,action)={
+		
+		if(action.type === 'increment'){
+			
+			return {
+
+				counter:state.counter+1;
+			}
+		}
+	
+		if(ction.type === 'decrement'){
+			return {
+
+				counter:state.counter-1;
+
+			}
+
+		}
+
+		
+	}
+	const store = createStore();
+
+	export default store
+
+
+	---------------------------------------------------------------
+
+	index.js
+
+	
+	
+	import {Provider} from 'react-redux'
+	import store from './store/reduxIndex';
+
+	const root = ReactDOM.createRoot(document.getElementById('root'));
+	root.render(<Provider store={store}><App /></Provider>);
+
+	---------------------------------------------------------------
+
+	
+	counter.jsx
+
+		use "useSelector()" and "useDispatch()"
+
+useSelector()
+
+	-It automatically subscribes to the store, so when the state changes, the component re-renders.
+	-it return the latest value 
+	
+useDispatch()
+	
+	-dispatch action it update the state
+
+
+	
+	import {useSelector ,useDispatch} from 'react-redux'
+
+	
+	const Counter = () => {
+		const counter = useSelector(stateValue => stateValue.counter);
+
+		const dispatch = useDispatch()
+		const Increament=()=>{
+			dispatch({type : 'increment'})
+		}
+		const decrement=()=>{
+			dispatch({type : 'decrement'})
+		}
+
+		return(    
+
+	<main className={classes.counter}>
+      		<h1>Redux Counter</h1>
+      		<div className={classes.value}>{counter}</div>
+      	<div>
+        	<button onClick={Increament}>Increament</button>
+        	<button onClick={decrement}>decrement</button>
+      	</div>
+      		<button onClick={toggleCounterHandler}>Toggle Counter</button>
+    	</main>
+	)
+}
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+redux toolkit
+
+	toolkit are mostly convenient for redux more simplify the syntax
+	
+for installation 	
+	npm install @reduxjs/toolkit react redux
+
+store->index.js
+	
+createslice 
+-------------
+
+	-createSlice is a Redux Toolkit function that automatically generates reducers, action creators, for a specific feature of the application.
+	-help to create more  maintainable Redux logic.
+	
+createSlice is a helper function from Redux Toolkit that makes it easier to create:
+
+name → unique name for slice
+
+initialState -> initialState for slice 
+
+Reducers → functions that change that state.
+
+
+
+So instead of writing all of this boilerplate manually, createSlice generates it for you.
+
+
+
+
+import { configureStore,createStore } from "@reduxjs/toolkit";
+
+
+	
+	const initialState = {counter : 0 }
+
+	
+	const counterSlice = createStore({
+		name : 'counter',
+		initialState,
+		reducres : {
+			increment(state){
+				state.counter++;
+				
+			}
+			decrement(state){
+				state.counter--;
+				
+			}
+		}
+	})
+	
+	
+	const store = configureStore({
+		reducer :counterSlice.reducer; 
+	})
+
+	export const actionState = configureStore(counterSlice.action);
+	export default store;
+	
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+	

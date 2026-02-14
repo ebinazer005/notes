@@ -1,0 +1,13 @@
+-tailwind css is a frame work 
+-and it s easy to work and 
+-syntax is tiny 
+
+
+
+
+config 
+	-go to the tailwind css website page ------doc---->framwork------->vite
+	
+	-it give all step that we need to do (do that in step by step)
+	
+	

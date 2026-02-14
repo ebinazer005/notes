@@ -1,0 +1,1490 @@
+why is platform independent ?
+
+	-bcz java compiler convert the code to byte code which can run any system 
+	
+	-one condition is need to install the JRE
+-----------------------------------------------------------------------------
+Why is Java not a pure object oriented language?
+
+	Java supports primitive data types - byte, boolean, char, short, int, float, long, and double and hence it is not a pure object oriented language
+
+-----------------------------------------------------------------------------
+
+Difference between Heap and Stack Memory
+
+Stack Memory	
+	used for temporary storage (local variables), delete when done.Follows LIFO (Last In, First Out)
+
+		-Local variables
+		-Method parameters
+		-Reference variables (not the actual object)
+
+	ex 
+
+	void test() {
+    int x = 10;         // Stored in Stack
+    Employee emp = new Employee();  // emp = reference stored in Stack
+}
+
+
+Heap
+	You store big, long-term items (objects)
+
+	-All objects
+	-All arrays
+	-All class instances
+
+ex
+	Employee emp = new Employee();
+The new object → stored in Heap
+
+-----------------------------------------------------------------------------
+How is Java different from C++?
+
+	1)C++ is only a  compiled language, whereas Java is compiled as well as an interpreted language.
+
+Compiled language
+	it convert all code into machine code before compiling 
+
+Interpreted languages
+	An interpreted language runs code line-by-line at runtime using an interpreter
+	
+	-Slower than compiled languages
+	-Easy to run and debug
+	
+
+	2)java platform independent c is machine dependent 
+
+	3) c++ allow pointer variable(pointer variable store a address only )  java not allow pointer
+	ex
+		int num = 10;
+		int *ptr = &num;
+	
+	
+-----------------------------------------------------------------------------
+
+
+instance variable and a local variable?
+
+instance variable
+
+	-they declear out side the method inside the class   
+	-each object of the class have own unique copy 
+
+	
+local variable
+	those variables precent within a block(methodls) we can utilize within the block 
+
+
+
+
+-----------------------------------------------------------------------------
+default values for variable in java 
+	
+	there is no default value in java 
+
+-----------------------------------------------------------------------------
+data encapsulation
+
+	data hiding inside the class and accessing only throw getters and setters method
+
+private int age;
+
+public int getAge() {
+    return age;
+}
+
+public void setAge(int age) {
+    this.age = age;
+}
+
+
+-----------------------------------------------------------------------------
+
+jit (just in time)
+
+	its a part of jvm it helps to run java code faster by converting byte code to machine code 
+
+	Java Code → Compiler → Bytecode (.class) →JRE -> JVM interprets it->jit
+
+Interpreting bytecode is slow.
+
+	So JIT improves speed by:
+
+✔ Converting bytecode → native machine code
+✔ Storing that machine code so JVM can reuse it
+✔ Running machine code instead of interpreting line by line
+
+-----------------------------------------------------------------------------
+ difference between equals() method and equality operator (==) in Java?
+
+== operator 
+	
+	-when it storing inside the same memory (heap or stack )
+
+we can use a (==)
+	
+	-it comparing a memory address 
+
+String str1 = "InterviewBit";
+String str2 = "InterviewBit";
+ 
+System.out.println(str1 == str2);
+
+	-when it store in a different memory (one in heap one in stack)
+	
+we use a equals()
+
+	-if address not some if value some we can use equels();
+
+
+String str1 = new String("InterviewBit");
+String str2 = "InterviewBit";
+
+System.out.println(str1.equals(str2));
+-----------------------------------------------------------------------------	
+How is an infinite loop declared in Java
+
+
+for(;;){
+}
+
+while(true){
+}
+
+do{
+}
+while(true);
+
+-----------------------------------------------------------------------------
+constructor overloading
+
+
+same name with different number of parameter based on the parametters we can access the constructor
+
+
+class ebi{
+
+int a;int b; int c
+
+public ebi(int a int b){
+	this.a = a;
+	this.b = b;
+}
+
+public ebi(int a int b int c){
+	this.a = a;
+	this.b = b;
+	this.c = c;
+}
+}
+
+-----------------------------------------------------------------------------
+Can the main method be Overloaded
+
+Yes, It is possible to overload the main method
+
+class Main{
+	public static void main (String args[]){
+
+	}
+
+	public static void main (int[] arge) {
+
+	}
+}
+-----------------------------------------------------------------------------
+
+method overriding
+
+	-two different methods have same method name and parameters in a different class 
+
+	
+class ebi{
+
+int a;int b; int c
+
+public a(int a int b){
+	this.a = a;
+	this.b = b;
+	
+	a+b
+}
+
+}
+
+class b extends ebi(){
+	
+	public a(int a int b){
+	this.a = a;
+	this.b = b;
+	
+	a-b;
+	
+}
+}
+
+
+-----------------------------------------------------------------------------
+
+single try block have multiple catch blocks 
+	
+
+yes 
+based on the exception it assign catch block automatically??
+
+
+try{
+int n = 1000, x = 0;
+    int arr[] = new int[n];
+    for (int i = 0; i <= n; i++) {
+        arr[i] = i / x;
+    }
+	
+}
+
+catch(ArrayIndexOutOfBoundsException exception){
+	System.out.println("1st block = ArrayIndexOutOfBoundsException"); 
+
+	//x = 0
+
+	//i / x → division by zero → ArithmeticException
+}
+
+catch (ArithmeticException exception) {
+    System.out.println("2nd block = ArithmeticException");
+
+	//i <= n → last iteration accesses arr[1000] → 	//ArrayIndexOutOfBoundsException
+} 
+
+-----------------------------------------------------------------------------
+
+finally  block 
+
+	block execute whether the block throw exception or run success fully it will execute 
+	
+	-finally block come after the try catch block  
+	
+
+
+-----------------------------------------------------------------------------
+custom exceptions in java?
+		
+		-class extends with Exception class 
+		-so u can create own constructor for the class this a way u can create custom Exception class in java 
+		
+	ex	
+	pubic class a extends Exception{
+
+	}
+
+-----------------------------------------------------------------------------
+
+super() keyword ?
+
+	-used to refer the parent class variable 
+	-if child class have a same variable name as parent have 
+	-useing super() key word we can differentiate
+
+	
+	
+class parent {
+	int num = 10;
+}  
+
+class child extends parent{
+	
+	int num =20
+
+	System.out.println(num);  
+	System.out.println(super.num); //refer the parent  
+} 
+
+-----------------------------------------------------------------------------
+
+
+Can the static methods be overloaded?
+
+	-Yes, static methods can be overloaded in Java.
+
+	-Method overloading means having multiple methods with the same name but different parameters
+
+
+ex 
+
+class MathUtils {
+
+    
+    public static int square(int x) {
+        return x * x;
+    }
+
+  
+    public static int square(int x, int y) {
+        return x * y;
+    }
+-----------------------------------------------------------------------------
+
+what static method
+
+	without create a object we can call 
+
+
+class MathUtils {
+
+    
+    public static int square(int x) {
+        return x * x;
+    }
+
+  
+    public static int square(int x, int y) {
+        return x * y;
+    }
+
+}
+
+public class main{
+	public static void main(String[] args) {
+		MathUtils.square(1)	 // ✅ Call static method without object
+	}
+	
+}
+
+-----------------------------------------------------------------------------
+
+
+Why is the main method static in Java?
+
+	jvm calls main method without create a object 
+
+-----------------------------------------------------------------------------
+
+Can the static methods be overridden
+
+		no  static method if we over overridden the static method we cant call the method without create a object 
+-----------------------------------------------------------------------------
+Difference between static methods, static variables, and static classes in java.
+
+
+anything is static we can without create a object 
+
+	
+static variables
+-----------------
+class count {
+
+	static int a = 1;
+}
+
+public class Test {
+    public static void main(String[] args) {
+	
+	System.out.println(count.a)
+
+	}
+}
+
+static classes
+--------------
+class MathUtils {
+    static int square(int x) {
+        return x * x;
+    }
+}
+
+public class Test {
+    public static void main(String[] args) {
+        System.out.println(MathUtils.square(5)); // Output: 25
+    }
+}
+	
+
+Static Classes
+
+class Outer {
+    static int outerVar = 10;
+
+    static class Inner {
+        void display() {
+            System.out.println("Outer var: " + outerVar);
+        }
+    }
+}
+
+public class Test {
+    public static void main(String[] args) {
+        Outer.Inner obj = new Outer.Inner();
+        obj.display();  // Output: Outer var: 10
+    }
+}
+
+-----------------------------------------------------------------------------
+
+What is the main objective of garbage collection
+
+	-Garbage Collection in Java is the process of automatically removing "objects" from memory (heap)
+	-it automatic way to free up the heap memory 
+	-The JVM automatically handles memory management using the garbage collector.
+ 
+
+-----------------------------------------------------------------------------
+class loader 
+	
+	-class loader is part of JVM 
+	-every .java  file after converted to byte code it become the .class file 
+	-this .class file load in to JVM by class loader
+
+-----------------------------------------------------------------------------
+
+What part of memory - Stack or Heap - is cleaned in garbage collection process?
+
+		--heap
+
+-----------------------------------------------------------------------------
+copy constructor 
+	
+	-it take the new copy of existing object
+	-one object value wont affect the new object values
+
+
+	
+class Copy{
+
+	Copy(String a ,String b){
+		this.a = a;
+		this.b = b;
+	}
+	
+	Copy(Copy c){
+		this.a = c.a;
+		this.b = c.b;
+	}
+
+		
+} 
+
+	main(){
+		Copy c= copy('1','4');
+		Copy d = compy(c);
+
+	}
+-----------------------------------------------------------------------------
+Shallow Copy && deep Copy?
+
+	it means we can copy on object value to another references
+
+ Shallow Copy
+---------------
+	-it wont create a  new object and memory address
+	-if u do any changes in reference it will change the original object 
+
+  
+ex 
+Rectangle obj1 = new Rectangle();  // original object
+Rectangle obj2 = obj1;             // shallow copy
+	 
+deep Copy
+----------
+
+
+
+	-it create complete new object copies
+	-if any thing changes happening in new object it will not affect the another one 
+
+ex
+
+Rectangle obj1 = new Rectangle(); // original object
+obj1.length = 5;
+obj1.breadth = 3;
+
+
+Rectangle obj3 = new Rectangle(); // new object
+obj3.length = obj1.length;        // copy value
+obj3.breadth = obj1.breadth;      // copy value
+	
+	
+
+	
+-----------------------------------------------------------------------------
+Thread 
+
+-thread means multitasking it can run the task concurrently
+
+-it share the heap it a had own stack for call the methods and object
+
+
+  Thread t1 = new Thread(new MyRunnable()---->class name);
+        t1.start();
+	t1.run()
+
+
+-----------------------------------------------------------------------------
+strings immutable
+
+	-because of String pool 
+	-all string in java store in a string pool 
+	-string pool it memory is part of heap 
+	
+
+	
+but we can use String buffer and String builder to make String is mutable 
+
+StringBuilder sb = new StringBuilder("ebi");
+sb.append("nazer"); 
+System.out.println(sb); 
+-----------------------------------------------------------------------------
+	
+What is a singleton class in Java?
+
+	-singleton class means we create a only one object for a class 
+	-using these we can avoid to create a multiple memory 	
+	-for that we create the object inside the class and return the object 
+	
+	
+
+	class singleton{
+		
+		private static singleton instance;
+
+		private singleton(){};
+		
+			 public static Singleton getInstance() {
+			if(instance ==  null){
+				instance = new singleton();
+
+		
+			}
+			return instance;
+		}
+		
+		
+	} 
+
+
+for calling the object 
+	
+	  Singleton s1 = Singleton.getInstance();
+
+-----------------------------------------------------------------------------
+
+
+
+what is compile time runtime user define error
+
+
+	-compile time error 
+		-systex error 
+		-missing semicolon like that if u violate the program rule it will appear
+		
+	
+        -runtime user
+		-it means compiler run successfully but after compiling it will occoring 
+		-ex
+			-DIVISION BY ZERO
+			-Accessing an array element outside its bounds.	
+
+	
+	-User-Defined Errors
+		
+		-we can manually create a exception using try catch 
+		ex
+		-NullPointerException
+		-ArithmeticException
+		-ArrayIndexOutOfBoundsException
+	
+-----------------------------------------------------------------------------
+
+type of exception 
+		
+	-checked Exception	
+		-must handle in a compile time exception 
+		-handle using try catch	
+		
+	ex 
+		-IOEXCEPTION
+		-SQLEXECPTION
+		
+		
+		
+	-unchecked Exception  	
+		-it wont force to handle mostly program mistake 
+		
+		-ARRAYINDEXBOUNDSEXCEPTION
+		-NULLPOINTEREXCEPTION
+		-ARITHMETICEXCEPTION
+
+	
+
+-----------------------------------------------------------------------------
+
+String ,StingBuffer ,StringBuilder 
+	
+	-String is store in a String pool 
+	-String buffer and StringBuilder store in a heap 
+	
+	
+	-using StingBuffer ,StringBuilder we can make String mutable 
+	-usually StringBuilder faster 
+	-StingBuffer faster then a String slower then a StringBuilder
+
+-----------------------------------------------------------------------------
+
+differences between interfaces and abstract classes
+	
+	
+abstract
+	-it hiding a implementation details 
+	-using abstract methods we can create a empty methods normal methods we can create empty methods 
+	-using abstraction we cant achieve the 100% abstraction 
+	
+	abstract class a{
+		
+		public abstract  void test();
+
+		public void test_2(){
+			s.o.p("sec_methods");
+		}
+
+			
+	}
+
+	class b extends a{
+		void test(){
+			s.o.p("test_1")
+		}
+	}
+	
+
+interface
+	-we can achieve 100% interface
+ 	-interface only accept abstract methods but from Java 8, interfaces can also have default and static methods.	
+	interface pass as parent using implements 
+	
+
+ex code 
+	
+	interface Animal {                   
+    		void sound();                    
+    		
+    	}
+}
+	class Dog implements Animal {        
+    		public void sound() {
+        	System.out.println("Barks");
+    	}
+}
+
+
+-----------------------------------------------------------------------------
+
+Comparator in java
+
+	-Comparator is the interface in java that contains the compare method.
+	-we can sort the value on object 
+	
+	
+	class Employee{
+		int age 
+		int salary 
+	
+		public Employee(int age ,int salary){
+			
+			this.age = age ;
+			this.salary =salary;
+	
+		}
+	}
+
+	class AgeCompar extends Comparator<Employee>{
+		
+		public void compare(Employee e1 ,Employee e2){
+			return e1.age - e2.age; //assending order
+		}
+	}
+
+	
+	public static void main(String[] args) {
+		
+		List<Employee> list = Array.asList(
+			new Employee(24,20000);
+			new Employee(22,20000);
+			new Employee(25,20000);
+		)
+
+		
+		Collection.sort(list,AgeCompar());
+	}
+
+
+-----------------------------------------------------------------------------
+
+collections
+
+		
+	-list ,set, queue
+	-and outsider collection is "map"
+
+
+list 
+	-it allow duplication operation 
+	-u can get a value by index value 
+
+	
+	-array list 
+	-linked list 
+	-vector
+	-stack
+
+
+	1)array list 
+		-dynamic array also
+		-use when u do more reading operation and when u need to randomly access the data 
+	features
+		-faster reading 
+		-slower insertion 
+	
+
+	2)-linked list 
+		-use when u do more insertion value 
+		
+	features 
+		-faster insertion 
+		-slow to searching and get data 
+
+	3)vector
+		-use when u need thread safe
+	
+	4)stack 
+		-it work under LIFO 
+		-it had push() and pop() operations
+	
+		
+	
+2 set
+	-A Set is a collection that does NOT allow duplicate elements.
+	-set storeing a data randomly unorderd
+	-not allowing null value
+	
+	  
+	
+	1)hashset 
+		
+		-best when u search something and u dont care about sorting 
+		
+		hashset<integer> hs =new hashset<>();
+	
+		hs.add(30);
+
+		
+	-hash set give the value randomly(no sorting),
+	-accept one null value  
+	-
+
+	
+	2)treeset
+		treeset<interge> ts = new treeset();
+
+		ts.add(30);
+
+		
+	-it automatically sorting the value 
+	-and it slower the a hashset 
+	-does not allow null value 
+	-best when u need to sorting the array  
+		
+
+	3)linkedhashSet
+		Maintains insertion order
+
+map 
+	storing key value pairs fast retrieving based on the key  	
+	
+	linkedhash map
+	hash map
+	tree map
+
+queue
+	fifo 
+
+	-priority queue 
+	-abstract queue
+	-array dequeue
+
+
+
+-----------------------------------------------------------------------------
+
+reflection 	
+		
+	-reflextion in java is if u call the object from different frameworks 
+	-some time u dont no the class name like (class information )
+	-so using reflection use can find out the class info (name ,classmethods)
+	
+
+ex 
+	import java.long.reflect.*; 	
+	
+	public void static main(String arg[]){
+		
+		Employee em =new Employee('ebinazer'  , 1000); ----------->object we don't know about class details 
+
+		Details d = em.getClass();
+
+		S.o.p(d.getName); ------------> u can get the class name 
+		
+	} 
+	
+	
+
+	
+-----------------------------------------------------------------------------
+
+ different types of threads usage?
+	
+		extended thread and implemented thread
+
+extended thread  
+----------------
+
+	class A extends Thread {
+		public void run(){
+
+		}
+	}
+	
+	public static void main(String arg[]){
+	
+		A a1 =new A();
+	
+		a1.start();
+	
+	}
+
+using extend method u can't extends with another class 
+	
+	
+	
+implements methods 
+---------------------
+	
+	class A  implements Runnable {
+		public void run(){
+
+		}
+	}
+	
+	public static void main(String arg[]){
+	
+		A a1 =new A();
+	
+		a1.start();
+	
+	}
+
+it a modern method u can implements with another class also 
+-----------------------------------------------------------------------------
+runnable and callable 
+	
+	runnable keyword
+		use to create a thread don't throw cheked Exception 
+	
+	callable keyword
+		-also create athread 
+		-but it cal throw checked exception 
+	
+	
+
+-----------------------------------------------------------------------------
+checked exception 
+		-checked exception means compile time 
+		-must handle on the compile time 
+		-ex ExceptionIo , SQLException 
+
+unchecked Exception
+		-runtime exception 
+		
+-----------------------------------------------------------------------------
+
+different type of thread priority 
+
+
+min priority ---> 1 thread 
+max priority ---> 10 thread
+norm priorities ----->5 thread (default )
+
+-----------------------------------------------------------------------------
+
+program and process 
+	
+program 
+	it means we wright the logic for complete the task 
+
+process 
+	-it mean when we complete the program in background 
+	-cpu and jvm allocating the memory and make ready to execution this work called process
+
+-----------------------------------------------------------------------------
+	
+throw and throws 
+
+public static int testExceptionDivide(int a, int b) throws ArithmeticException{
+       if(a == 0 || b == 0)
+           throw new ArithmeticException();
+       return a/b;
+   }
+	
+	throw 
+		-we can manually throw the exception by this keyword	
+		
+		
+	throws 
+		-it function level keyword we mention the function going to throw exception 
+	
+
+
+
+-----------------------------------------------------------------------------
+serialization 
+	
+	- if u want to store a object in file serialization helps   
+	-it is a process of converting object to byte code  
+	-deserialization it means back to byte code to original object format
+ 
+	-if don't want to particular variable serialization use "transist key word"
+
+
+ex 
+
+import java.io.Serializable;
+
+class Student implements Serializable {
+    int id;
+    String name;
+}
+
+	
+
+
+FileoutputStream fs = new FileoutputStream('filename.txt');
+ObjectOutputStream oos = new ObjectOutputStream(fos);
+
+Student s =new Student();
+
+oos.writeObject(s) --------> serialization 
+
+
+FileInputStream fi =new FileInputStream('file.txt');
+ObjectInputStream oos = new ObjectInputStream(fi);
+
+
+Student s= (Student)oos.readObject ------->deserialization 
+
+
+transist --------------*********
+
+transient String password;
+
+-----------------------------------------------------------------------------
+memory mapped buffer
+		
+	-it technic of mapped the file directly in a memory(RAM)
+	-so without input and output stream u can access the data as u access like the array 
+	-it faster then  input and output stream
+
+	ex
+	RandomAccessFile file = new RandomAccessFile("test.txt", "rw");
+	filechannal channel = file.getChnnal();
+
+	MappedByteBuffer buffer  = map.channel();
+	
+
+-----------------------------------------------------------------------------
+
+What happens if the static modifier is not included in the main method signature in Java?
+
+	-code will compile but jvm connot find the main method  
+	-it throw the runtime error NoSuchMethodErrorl
+
+
+-----------------------------------------------------------------------------
+
+cloning object 
+	
+	-it means we can get exact cloning object including all of its data/values
+	-it had a two keywords Cloneable && clone
+
+	if u want to clone class u need to implement the cloneable interface in the class 
+		
+ex
+	class Student implement cloneable{---->it allow the clone
+
+		int id;
+    		String name;
+
+    		Student(int id, String name) {
+       		 this.id = id;
+        	 this.name = name;
+    		}
+
+	
+		public object Clone() throws CloneNotSupportedException {
+			return super.clone();
+		}
+	  }
+
+		
+	 public static void main(String[] args) throws CloneNotSupportedException {
+        Student s1 = new Student(1, "Ebi");
+
+        Student s2 = (Student) s1.clone(); // cloning
+
+-----------------------------------------------------------------------------
+
+Is it mandatory for a catch block to be followed after a try block?
+	
+	-it will work need either one catch or final block 
+	-without both it will not work 
+-----------------------------------------------------------------------------
+	
+Why does the java array index start with 0?	
+
+	-it had formula to calculate the memery 
+	if index start with 0 it avoid extra one calculation in memory address
+	
+
+-----------------------------------------------------------------------------
+wrapper class 
+	
+	-it process of converting primitive data type to object 
+	-it had two concept 
+	
+		-auto boxing 
+		-unboxing 
+
+	auto boxing 
+		-it process of converting a primitive to object 
+
+		ex
+		int a =10
+		Integer autobox = a
+
+	unboxing 
+		-process of converting object to primitive
+
+		ex 
+		Integer a = 50
+		int Unboxing =a
+-----------------------------------------------------------------------------	
+
+coercion
+
+	-it means converting small datatype to large autometically
+	-large datatype to small autometically
+	
+		type
+			-explicit -large to small 
+			-imlicit  - small to large 
+
+imlicit
+
+		int a =10;
+		double d = a;
+
+explicit
+	
+		double a = 10
+		int d =a;
+-----------------------------------------------------------------------------
+
+life cycle of thread 
+		
+	new ----> create 
+	runnable ----> ready to run
+	blocking ------> waiting for resource from cpu 
+	waiting  ----->waiting to another thread notify
+	Timed waiting------->thread wait for specified time(using Tread.sleep())
+	termination ------>complete execute / or stop by error
+
+
+-----------------------------------------------------------------------------
+marker interface 
+	
+	-nothing but a empty interface no field and methods 
+	-it using to tag  or mark the class so jvm know this class belongs to this interface 
+	
+	ex
+		cloneable, serialization
+
+
+-----------------------------------------------------------------------------
+
+memery leaking 
+	
+	-when object occoring even that no logner needed so garbage collection wont clean that space becouse it still refer someware
+	
+	 -it make your program slow down
+
+	
+-----------------------------------------------------------------------------
+functional interface
+	
+	-it must have a only one abstraction with lambda expression,and 
+	@FunctionalInterface annotation 
+
+	
+ex
+	@FunctionalInterface
+	interface Calculator {
+
+		int add(a,b);
+	}
+
+	public class FunctionalInterfaceExample {
+		main(){
+
+		Calculator Calc =(a,b) -> a+b;
+		
+		int result =Calc.add(1,2)
+
+
+		}
+	}
+
+
+	
+-----------------------------------------------------------------------------
+default keyword
+
+	in interface we only create abstract methods using default we can create a non-abstract method
+	
+	default only using inside the interface 
+	
+	-if i have one interface with a some methods 
+	-later i want to add a new method 
+	-if i add a abstract method all implemented class will break
+	- using default keyword ew can give default behavior so class wont break   
+		
+
+-----------------------------------------------------------------------------
+
+.this keyword
+	
+	-it refer the correct instance of the class 	
+	
+	so when we create a instance variable if we want to access in a method we need to use .this
+
+-----------------------------------------------------------------------------
+generics in java?
+		
+		ArrayList<T>  ---> <T>  its a generic 
+	
+	-generic in java allow to write classes, interfaces ,and methods 
+	-it helps to type casting and reduce the run time 
+
+	
+	class box<a>{
+
+	} 
+	
+-----------------------------------------------------------------------------
+Synchronized
+
+		
+	it ensures that only one thread execute the a block of the code,
+or method at a time 	
+	
+
+-----------------------------------------------------------------------------
+notify and notify all
+
+	notify 
+		-it wake only one thread in the synchronized method
+		efficient only one thread needed in synchronized object
+	
+	ex
+		synchronized(obj) {
+    			obj.notify(); 
+		}
+	 
+	
+	notify all
+		-it wake all the thread in the synchronized method 
+		-use this when u don't know which thread to proceed 
+
+	ex
+		synchronized(obj) {
+    			obj.notifyALL(); 
+		}
+	
+-----------------------------------------------------------------------------
+
+stream 
+	
+	-its using for processing a collection and other data 
+	-using 	
+
+		-foreach()  ->using to itrate the data 
+		-filter() ->using to filter the data 
+		-map()  - >transform each element
+		-collect() -> collect the all transform data
+		-reduce() ->reduce a stream value to ingle value 
+		
+	
+	
+map()
+List<Integer> numbers = Arrays.asList(1, 2, 3, 4, 5);
+
+	List<Interger> mul =  numbers.stream()
+				     .map(n -> n* 2) //2,4,6,8,10
+			              .collect(collect.toList());
+
+		
+					
+	
+-----------------------------------------------------------------------------	
+
+
+assert
+	
+	-assert keyword is using for debugging 
+	-it check the condition true or false if it is false it throw asset exception 
+
+age =15;
+
+	
+assert age >=18 : "age is must greater then 18";
+	
+-----------------------------------------------------------------------------
+hashcode()
+	
+	-hashcode give numerical representation for object for better efficient storage 
+	
+ex
+	String s1 = "Ebi";
+	System.out.println(s1.hashCode());
+	
+-----------------------------------------------------------------------------
+toString()
+
+	- toString is String represent for object and array 
+	-help to debugging,loggin for developers
+ 
+
+	car s1 = new car ;
+	s.o.p(s1.toString);
+
+-----------------------------------------------------------------------------
+
+method reference 
+		
+	using method reference we can give a reference to the method for better readability 
+
+	
+	class Test {
+    		public static void show() {
+       		 System.out.println("Car is driving...");
+    	}
+	
+	}
+
+	class main {
+		main(){
+		ref r = Test :: show;
+	
+		r.run() ------->it will run the show method
+		}
+
+	}
+-----------------------------------------------------------------------------	
+
+annotation 
+	
+	-it is metadata tagthat provid a additionl information for function or class 
+	-for jvm or compiler it give a extra information
+	-mostly we using this in spring boot
+
+-----------------------------------------------------------------------------
+jdbc statement 
+	
+statement ---> execute SQL query without parameters (select * from) 
+preperStatment ----->execute SQL query with parameters (select * from where is =?);
+callable Statement ------->used to call stored procedure from database 	
+-----------------------------------------------------------------------------
+
+path and classpath  (path for OS | classpath for "JVM" )
+		
+	path 
+		-it normal location of the file used by "operating system"
+	 	-for using to c=run command on CMD 	
+	
+	class path 
+		-it path for (jar,class file,library)  for "JVM" to run 
+		
+-----------------------------------------------------------------------------
+fail fast & fail safe
+	
+fail fast 
+		
+	-arraylist 
+	-linkedList
+	-hashmap
+	
+	
+	-if any thing modify during the iteration it thrown exception (cuncurentmodificationException)
+
+	-it not thread safe 
+	
+	ex
+	ArrayList<integer> list = new ArrayList<>();
+
+	list.add(1);
+		
+
+fail safe
+		
+	ConcurrentHashmap
+	CopyOnWriteArrayList
+	CopyOnWriteArraySet	 
+
+
+	-it get own copy of the collection 
+	-so it execute the copy so if u do any modification it wont affect the execution
+	
+ex
+	CopyOnWriteArrayList<integer> list=  new  CopyOnWriteArrayList<>();
+	
+	lisr.add(1)
+
+-----------------------------------------------------------------------------
+
+process and Thread 
+		
+	process 
+		
+		-process is nothing but a memory 	
+		-it work is don't allow memory with each other 
+	
+	thread 	
+		-it is part of the process memory 
+		-it work is share the memory for threads 
+-----------------------------------------------------------------------------
+
+multi thread advantgage 
+	
+	-better CPU utilization 
+ 	-faster execution 
+	-increase the website repose time 
+	-better handling the I/O data
+
+-----------------------------------------------------------------------------
+multi threading 
+		
+		-it allow to parallel execution of multitasking 
+		-improve the cpu utilization 
+		-creating using  thread class and Runnable interface
+-----------------------------------------------------------------------------
+collections vs collection
+
+	collection 
+		-it java framework 
+		-it interface contain group of object like 
+			list,set,queue
+	
+	collections
+		
+		-it a group of utility class that help to process the collection object 
+	
+			ex 
+				collections.sort
+				collections.min
+				collections.max
+
+
+-----------------------------------------------------------------------------
+
+sleep() and Wait()
+
+		sleep()
+			
+			-sleep() come under the thread class 
+			-it can hold the thread until specific time 
+			
+
+		ex
+			thread.sleep(millis : 2);
+
+---------------------------------------------------------------	
+	class a extends Thread {
+		
+		public void run(){
+			
+			for(int i = 0 ; i<=10 ; i++){
+				s.o.p(a);
+				Thread.sleep(millis : 10); - --------execute every 10 millie sec
+			}
+		} 
+		
+	}
+
+	
+	class b extends Thread {
+		
+		public void run(){
+			
+			for(int i = 0 ; i<=10 ; i++){
+				s.o.p(a);
+			}
+		} 
+		
+	}
+
+	this thread example it can run both concurrently 
+
+----------------------------------------------------
+	
+		wait()
+			- come under the synchronized block only we cant call this outside of the block
+			
+			
+	
+			
+			
+
+-----------------------------------------------------------------------------------------------
+dead lock 
+	
+	-dead lock means tow are more thread waiting for each other but it permanently block
+	-it like 'a' is waiting for 'b' and 'b' is waiting for 'a' 
+
+	
+to  avoiding that 
+	-use tryLoack insdead of synchronized 
+	-keep synchronized block as small as possible
+-----------------------------------------------------------------------------------------------
+volatile keyword
+	 
+volatile boolean flag = true;	
+	
+	-we using when we work with thread 
+	it always return the updated value 
+
+	ex 
+		one thread update the volatile variable other thread see only updated value  
+	
+	
+	volatile boolean flag = true;
+
+	Thread t1 = new Thread(() -> {
+    	while (flag) {
+        	// This time thread sees updated value
+    	}
+	});
+
+	
+	-without volatile keyword the see the old flag value becouse it save in a catch memery   
+	-volatile store in heap memory
+
+
+-----------------------------------------------------------------------------------------------
+
