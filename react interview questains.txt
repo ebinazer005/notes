@@ -43,7 +43,7 @@
 		-it just figure out which part of the UI need to update 
 		-When state/props change:
 				-A new Virtual DOM is created
-				-React compares old and new Virtual DOM
+				-React compares old and new Virtual DOM(reconciliation)
 				-Finds only the changed parts
 		-REACT DOM receiving those information from a virtual dom that send those information to the DOM 	
 
