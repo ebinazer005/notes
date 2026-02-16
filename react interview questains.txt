@@ -40,7 +40,11 @@
 		
 	-virtual dom
 		-it lightweight copy of the real DOM
-		-it just figure out which part of the UI need to update 		
+		-it just figure out which part of the UI need to update 
+		-When state/props change:
+				-A new Virtual DOM is created
+				-React compares old and new Virtual DOM
+				-Finds only the changed parts
 		-REACT DOM receiving those information from a virtual dom that send those information to the DOM 	
 
 ---------------------------------------------------------------------------
