@@ -1,4 +1,39 @@
+var, let, const – Difference
 
+	1)var 
+		-function scope 
+		-can be redeclare
+		-can be reassign 
+	
+	  ex 
+		var x = 10;
+		var x = 20; // allowed
+		x = 30;     // allowed
+		
+	2)let 
+		-block scope
+		-cant be redeclare within a same scope
+		-can be reassign	
+	  ex 
+		var x = 10;
+		var x = 20; ❌ error
+		x = 30;     // allowed
+
+	3)const
+	
+		-block scope 
+		-cant be redeclare
+		-cant be reassign  
+	 ex 
+		var x = 10;
+		var x = 20; ❌ error
+		x = 30;     ❌ error
+	
+	 	but object it allow 
+			
+			const a = [1, 2];
+			a.push(3); // allowed
+	 
 1)what is react?
 	-react is javascript library not framework
 	-allow us to create to single page apps(spa) for short
