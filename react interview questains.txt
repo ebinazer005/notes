@@ -33,7 +33,16 @@ var, let, const – Difference
 			
 			const a = [1, 2];
 			a.push(3); // allowed
-	 
+--------------------------------------------------------------------------
+Why do we use async & await 
+
+		-async make as use a awite inside the function 
+		-awite waite for a api response  
+		-Then moves to the next line
+		-without blocking the whole program only make wait that function 	
+
+then,catch also doing the same thing but async awite give mor readabltity 
+--------------------------------------------------------------------------
 1)what is react?
 	-react is javascript library not framework
 	-allow us to create to single page apps(spa) for short
