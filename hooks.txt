@@ -34,8 +34,8 @@ useActionStatus();
 
 redux hook
 ------------
-	-useSelector()
-	-useDispatch()
+	-useSelector()------>it for get the state value
+	-useDispatch()------>it used to update the action value
 
 
 Router
