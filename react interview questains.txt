@@ -1,3 +1,27 @@
+
+
+component vs element 
+	
+	element 
+		-created by react.createelement or jsx 
+		-it tell the react how ui look like 
+	
+	component 
+		it is a block that contain multiple elements to build a ui 
+--------------------------------------------------------------------------
+controller component vs uncontrolled component 
+	
+	controlled 
+		-it all value controller by state  
+		-id use a usestate that is controlled component 
+		-it value change it rerender the whole component 
+	
+	uncontrolled component 
+		
+		-when we dont use a usestate the value totally controlled by a dom 
+		-that is uncontrolled component 
+
+--------------------------------------------------------------------------
 var, let, const – Difference
 
 	1)var 
@@ -1198,7 +1222,35 @@ main different between the callback and usememo
 react.memo() is different 
 
 		it wont allow the child component render if props did't change 
------------------------------------------------------------------------------------------------------------------------------------------------------------------				
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------	
+
+
+
+useCallback , usememo ,use effect ,and react.memo()?
+	
+	
+	-React provides several tools to prevent unnecessary re-renders, but each works at a different level.
+
+usecallback()
+	
+	-working on the function level if function value not change it wont retender the component 
+	-it store in react internal memory and take reference only if value change it update the reference 
+	
+usememo()
+	
+	-return value level 
+	-if return value not change it wont rerender the component 
+
+react.memo()	
+	-it is child component level 
+	-if props value not change it wont alow the component rerender
+	
+useEffect()
+	
+	-it component level and handle the lifecycle and  sideeffects
+	-it rerender the function only the first time the component render unless we give a dependency 
+	-manly using for handle the api call side effects  
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------
 prevent default()	
 	
 	default browser behavior 
