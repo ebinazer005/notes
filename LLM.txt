@@ -412,9 +412,9 @@ data ingestion pipeline
 											                                          |	
 											      									  | 		
 											      									  |	
-retrieval pipe line 				--------------------------------------------------|	
-									|
-									|			
+retrieval pipe line 										--------------------------|	
+															|
+															|			
 	your query  ->  vector embedding --->[1,0,1,4] --->retrieval from the ----------> send  " LLM " the related token based on the 															 vector database										       "your query" 						
 ------------------------------------------------------------------------------------------------------------------------------------------------							lecture -5 a close look at gpt 3
 		
@@ -996,4 +996,5 @@ code for token id to vector embbeding
 	
 
 	
+
 
