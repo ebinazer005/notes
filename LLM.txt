@@ -415,7 +415,7 @@ data ingestion pipeline
 retrieval pipe line 										--------------------------|	
 															|
 															|			
-	your query  ->  vector embedding --->[1,0,1,4] --->retrieval from the ----------> send  " LLM " the related token based on the 															 vector database										       "your query" 
+	your query  ->  vector embedding --->[1,0,1,4] --->retrieval from the vector database ----------> send  " LLM " the related token based on the "your query" 
 
 
 
@@ -999,6 +999,7 @@ code for token id to vector embbeding
 	
 
 	
+
 
 
 
