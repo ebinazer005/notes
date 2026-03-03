@@ -1,0 +1,992 @@
+what is LLM ?
+ 	
+	1)
+	-large language model is a neural network design model  
+	-to understand , generate ,response to human like text(it means it give response like human )	
+
+		*LLMs use neural networks to generate responses that text human-like.*
+	-
+
+	2)
+	-what is neural network?
+		-this are trained on massive text data  
+		-nlp using a transformer -powerful model architecture used to do NLP tasks
+		
+	 
+	3)llm definition 
+
+	-the "large" word from the "large language model" refer both huge datasets and parameters 
+	-llm has billions number of parameters to during the training 
+	-"language model" means it only deal with language based tasks(NLP -> natural language process) like question answer ,translate, sentimental analysis  
+	
+
+	"only with LLM we cant generate the image with multimodals like vision (LLm + vision((needs vision models like "DALL·E" or "Stable Diffusion")) we can generate the image"
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+what is different between llm and nlp?
+	
+	nlp 
+	
+		-it commonly using for understanding the human language 
+		-it read your text understand and break down and pick the keywords and understand what u coming to say 
+		-but it limited ,it can think it own, it can't create long text responses "it only works on predefine rules and models "
+		-it using a ML for understanding 
+
+
+		example 
+			if u give a text 
+				show me the roadmap become ai developer visuals 
+				 	
+				-it only understand the context 
+				-it won't give road map 	
+				-it can't create a visuals 
+
+		
+		usecase 
+			Chatbots (basic)
+				Bank support bot with fixed answers
+			Speech-to-text
+				Voice typing in mobile
+			
+			Sentiment analysis
+				“This movie is awesome 😍” → Positive
+				“Bad service” → Negative
+ 
+		 
+	llm 
+		-it nlp+ massive amount of data 
+		-it can understand the text and generate human readable format and explain the concept clearly 
+		-it using neural network for training and transformer architecture based it work 
+		-but it only work with text they dont create a image 
+
+			example 
+			if u give a text 
+				show me the roadmap become ai developer visuals 
+				 	
+				-it only understand the context 
+				-it can give road map 	
+				-it can't create a visuals
+
+		
+	usecase 
+				
+		-chartGPT
+		-Text summarization
+		-code generation 
+		
+		
+	gen ai 
+		-it can create a new content like text ,code, image, music,
+	 
+	
+		example 
+			if u give a text 
+				show me the roadmap become ai developer visuals 
+				 	
+				-it only understand the context 
+				-it can give road map 	
+				-it can create a visuals
+		
+		
+	 
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+what make llm so good from others?
+	
+	transformers architecture 
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+LLM vs GEN AI vs DEEP LEARNING vs ML vs ARTIFICIAL INTELLiGENT 
+
+ARTIFICIAL INTELLIGENCE (AI)
+│
+├── MACHINE LEARNING (ML)
+│   │
+│   ├── Deep Learning (DL)
+│   │   │
+│   │   ├── Generative AI
+│   │   │   │
+│   │   │   ├── Large Language Models (LLMs)
+│   │   │   │   ├── GPT
+│   │   │   │   ├── BERT
+│   │   │   │   └── LLaMA
+│   │   │   │
+│   │   │   ├── Image Generation Models
+│   │   │   │   ├── DALL·E
+│   │   │   │   └── Stable Diffusion
+
+
+	
+AI	
+	-Artificial intelligent is broad concept  
+	-it use branches like a ML,DL,GEN AI
+	
+ml
+	-is subset for ai
+	-it learn from the algorithms 
+		like 
+			-Linear Regression
+			-decision tree
+	 		-random forest 
+			-svm
+		
+	-it using for deducting the spam
+
+
+DL
+	-dl is subset of ml
+	-it learn from the neural network and huge data sets 
+	
+		using for 
+			-image recognition
+			-speech recognition 
+	
+GEN AI
+	-is sub set for DL
+	-it create  a new content from all result 
+		like 
+			-test
+	 	 	-image
+			-audio
+			-code
+		
+LLM
+	-it a subset for GEN AI
+	-it focusing on the language 
+	-it using for create a human like text
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+									chapter -2
+								      application using
+what application using llm 
+	
+	-chat bot app
+	-content creation
+	-sentiment analysis  for that we can using llm 
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+									chapter -3 
+								Stages of building and using LLMs
+ 
+for creating a llm we need to do two step 
+	
+	1)pretraining 
+	2)finetuning 
+
+1)pretraining 
+	
+	-it means we training the llm with a huge amount a data (raw data)
+	-raw data means plan text without any labeled data 
+	
+	
+		for example chatgpt 3 llm 
+ 	
+			is trained by (token means "token = 1 word")
+				- "Web crawl data" website with 60% that was 410 billion token 
+				- from "Wikipedia" 3% 3 billion token
+	 
+	-that why it different from the "NLP" with this huge billion amount of data it can perform author tasks also 
+	-for NLP 50k -1M token only for training 
+	
+
+2)finetuning 
+	
+	-it means we training the model for specific task and domine 
+	-training with you own dataset (with labeled data) with pretraining datasets  
+	
+	for ex
+		-if u run a company you want to create your own chat assistant your data not in a internet 
+	  	-ai need to answer with a depending on a your company 
+		-u can training the model with your own data set 
+	
+	
+another ex 
+	
+	-chat gpt learn how to relatable answer for the question from the pretraining 
+	-finetuning is for how to answer politely like that for finetuning 
+	
+					
+		
+	 
+	
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+				
+								chapter-4
+							  basic of transformers  
+	
+-before transformers it RNN(Recurring neural network) were use for handle the sequence of data 
+-it process one "input at the time" ,"have no memory"
+	
+for solving the memory problem create "LSTM - (long short term memory network)" 	
+LSTM also lack when we give a large sentence input  
+	
+in 2017 google release the transformer paper "attention for all"
+	
+what is transformer 
+	
+	-the key idea of transformer attention 
+	-it core neural network architecture for create a llm 
+	-usage is to understanding the relationship between the word and sentence process parallelly 
+		for example 
+			the cat sit in mat because it was tired 
+				here "it" word point the "cat" so it understand the sentence like this  	
+			
+	-instead of line by line processing it make llm fast and scalable 
+	
+	
+
+
+
+	
+history 
+	-transformer paper introducing in 2017 
+	-initially it using for language translate task eng -> German like 
+	-later is was discover transformer architecture we can do so many things  
+
+
+
+
+interview question 
+	
+	how many features(it means dimensional vector) they use in a real documentation 
+		
+		-512 dimensional vector for single word
+	what embedding methods they use in transformer  
+			
+		-byte pair
+` 	 	
+	
+
+Transformer architecture (ing to german)
+	
+	
+	
+encoder return embedding					    ("Des est ein beispel")			
+vector as input to decoder---->embedding ------------------|   		output(layer)	
+                             				   |	            ^
+				^			   | 		    |	
+				|			   |	            |
+ it Encode the input		|  			   | 	
+text in future decode use--->Encoder	 		   ---------------decoder	
+	encoder			^  					    ^
+				|					    | 	
+this prepare for 		|					    |	
+encoder --------------> preprocessing step  			   preprocessing step --------------->input text prepare for decoder 
+				^				 	    ^	
+				|					    |	
+			input("this an example")                   input ("Des est ein") ---------------->partial output text
+				
+
+
+
+transformers dividing two parts 
+	
+		-Encoding(left) -> it generate the input 
+		-decoding (right) ->it generate the output 
+
+ 
+		
+Encoding 
+	
+i)input come
+
+ii)preprocessing (tokeniztion)
+	-in this step it do tokenization 
+	ex "this an example"
+	
+	-[this , an , example]
+	
+tokenization
+	"this"    → 312
+	"an"      → 45
+	"example" → 981
+					
+		
+iv)vector embedded
+	it converts to token to vector 
+		ex
+	
+		vectors means convert a data in floating points and  storing a multi dimensional value this diagram has a 512 dimension  	
+
+
+iii)positional Encoder 
+	
+		-this layer repeat N time 
+		-it position the data based on the vector embedding data 
+	
+		it has two sub layers 
+			-multi head self attention  -> it organising the word in correct sequent "'this' con before the 'example' "
+			-Feed-Forward Network (FFN)
+		
+------------------------------------------------------------
+
+ different between the transformer and llm
+	
+	transformer 
+		-is model architecture for building a llm 
+		-it using encoder/decoder and self attantion  
+		-is not only for traslation it also used for predict by image 
+	
+		
+		
+		type transformer 
+			-BERT
+			-gpt
+			-t5
+	LLM
+		-it large langurage model trinning by huge amount of data 
+		-it build using by a transformer 	
+		-it big trainned system 
+		
+		*not all llm use to build a transformer it can use recurrent convolutional architecture* -> befure transaction recurent were used 
+	
+
+					
+	 
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+RAG -retrieval augmented generation 
+
+definition of rag 	
+	
+	-rag give additional information to llm like document and database 
+	
+	
+RAG ->retrieval augmented generation
+	
+	-in general chatgpt and llms are trained till particular date 
+	-for ex u ask chat  gpt "did u train up to data" it give no i am trained till 2025 aug like that 
+	-if u ask some thing about your company or personal question it wont give 
+	-if we give input with company document and database details with a help a rag llm give a answer based on the details  
+
+	without rag 
+		llm if that don't know about the question it will "hallucinate"	
+				
+	
+	-vector database 
+			
+			-in here read the pdf and convert the word  to chunks 
+			-and assigning a floating values like[0.45,1.566,034] like multi dimensional based on the data  	
+			-store in a database that is called vector database 
+			-"and these data go to the embedding model "
+
+
+	
+working flow 
+	
+		
+	-RAG is working along with LLM and vector database 
+	-vector database has the information( personal / customise data) that not llm trained with
+		
+	-vector database 
+			
+			-in here read the pdf and convert the word  to chunks 
+			-and assigning a floating values like[0.45,1.566,034] like multi dimensional based on the data  	
+			-store in a database that is called vector database 
+			-"and these data go to the embedding model " 
+		
+	this how we storing a data in vector database we call this a (data ingestion pipeline)
+		
+		-----------------------------------------------------------	
+		|vector database  -storing <-embedding <- parsing <- data |
+ 		-----------------------------------------------------------
+
+difference between normal flow and RAG
+		
+		normal 
+			user --->query --> LLM ------> response 
+	
+		RAG 	
+			query --->vector database  ----> LLM  ---->response
+
+	
+	
+two important pipe line in RAG 
+		
+	1)data ingestion pipeline 
+	2)retrieval pipe line 
+
+						   user query		             retrieval pipe line
+data ingestion pipeline					|			     --------------------
+------------------------				v						     			
+ 			    		 	    retrieval		     		     output
+							^					^
+	                               storing          |					|
+	data -->parsing -> embedding -----------> vector database ---------------------------->LLM
+		
+	
+------------------------------------------------------------------------------------------------------------------------------------------------							lecture -5 a close look at gpt 3
+		
+-gpt transformer build over the transformer 
+-in actual transformer has encoder and decoder in gpt has only "decode"	 
+-it mainly using for text generation ,code writing
+	
+architecture gpt transformer 
+	
+→Input text
+→ Tokenization
+→ Token Embedding + Positional Encoding
+→ Decoder blocks (Nx)
+   - Masked Self-Attention
+   - Feed Forward Network
+→ Linear + Softmax
+→ Next word prediction
+------------------------------------------------------------------------------------------------------------------------------------------------
+							lecture -6 
+	
+understand the stages of creating mechanism
+	
+stage 1  building a llms
+	
+	-data preparation  --------->tokenization ,vector embedding  
+	-attention mechanism 
+	-llm architecture 
+		|
+		|
+		|---------pre training(data)
+		|
+	 	
+stage 2 fundamental data
+	-training loop
+	-model evaluation  
+	-loop pre training weight
+	|		|
+state_3	|		|		
+	|		|
+   finetuning 	     finetuning
+
+1)classifier	2)personal assistance 	
+------------------------------------------------------------------------------------------------------------------------------------------------
+							lecture -7 tokenization 
+	
+i) we want dataset we take "the verdict by edith wharton" book for data set 
+		
+		link for book(datasets) ->https://github.com/rasbt/LLMs-from-scratch/blob/main/ch02/01_main-chapter-code/the-verdict.txt
+	
+II)download and load the dataset into python 
+		
+	1)creating token 
+
+	*code*
+		with open("file path", "r", encoding ="uft-8") as f; ---------->"r"-reading ,"encoding ="uft-8" we encode the 											letters ,uft-8 ->it can soport all language   
+		raw_data = f.read;
+			
+		print("total number of charactor "+len(raw_data) );
+		print(raw_data[:99]);
+				
+	\\spliting the words
+			
+		preprocessing = re.split(r'([,.:?_!"()\']))' ,raw_data);----> we split 'words and symbols' "re" regular expression 
+		 
+		preprocessing = =[item.strip() for item in preprocessing is item.strip()]---->strip() remove unwanted spaces  
+		print(preprocessing[:30]);
+		print(len(preprocessing))
+
+	2)convert tokens to token id
+		-hear we sort the proccesd token to vocabulary(alphabetic order)
+		-and assiging a indivadual token  
+			
+		all_words(sorted(set(preprocessing))) -> hear sort the Words to vacabulary(alphabetic order)
+		print(len(all_words));
+			
+		all_words.extend(["<|endoftext|>","<|unk|>"]) ---> <|endoftext|> act as fullstop for input / <|unk|> if unknow word 						       		   come  it replace the <|unk|>
+
+		vocab = {token:integer for integer ,token in enumerate(all_words)} --->using enumerate for assigning a number
+											syntex 	
+											{key: value for (some variables) in iterable}
+
+	
+		for i,item in enumerate(vocab.item()):
+			print(item)
+			if(i >= 50):
+				break;
+	
+	
+	
+decoding the words 
+		
+	know is encoded 
+		ex
+		simple text 				tokenized text               token ids
+		the fox chased the dog -------------> the,fox ,chase ------------->  3,3,0
+						      the , dog			     3,1
+	decode 
+		token ids           tokenized text         	simple text 
+		 3,3,0    ------> the,fox ,chase  ------------>	the fox chased the dog 	
+		 3,1		  the , dog	
+			
+	
+	
+final code 
+	
+	class SimpleTokenizerV1:
+		def __init__(self,vocab):
+			self.str_to_int = vocab
+			self.int_to_str = {i:s for s ,i in vocab.items()}
+		
+		def encode(self,text):
+			preprocessed=re.split(r'([,.:;?_!"()\']|--|\s)', text)
+			preprocessed=[item.strip() for item in preprocessed if item.strip()]
+			preprocessed =[item if item in self.str_to_int  else 
+					 "<|unk|>" for item in preprocessed] -> if word not present it  assign "<|unk>"  
+			ids = [self.str_to_int[s] for s in preprocessed]
+			return ids
+		
+		
+		def decode(self,ids):
+			text = " ".join([self.int_to_str[i] for i in ids])	
+			text =re.sub(r'\s+([,.?!"()\'])', r'\1', text)
+			return text			
+	
+
+		tokenizer = SimpleTokenizerV1({token:integer for integer ,token in enumerate(all_words)});
+		
+		with open("file path", "r", encoding ="uft-8") as f; ---------->"r"-reading ,"encoding ="uft-8" we encode the 											letters ,uft-8 ->it can soport all language   
+		raw_data = f.read;
+			
+
+		
+		ids= tokenizer.encode(raw_data);	
+			
+		tokenizer.decode(ids);
+	
+	
+in here if give a word that is not in a data set it will throw a error 
+
+		ids = tokenizer.encode("hi")
+		preprocessed = ["hi"]
+		for s in preprocessed:
+    		self.str_to_int[s]
+		s = "hi"
+		self.str_to_int["hi"]
+		vocab = {"hi": 0}
+
+if hi not in a vocab(nothing but splitting the words and assign a token ids ) it will throw a error here ids = [self.str_to_int[s] for s in preprocessed]
+but we can handle using <|endoftext|> it separate every document and <|unk|> by assigning a fake token id  
+
+				
+------------------------------------------------------------------------------------------------------------------------------------------------
+							lecture -8 byte pair Encoding -(BPE tokenization )
+
+
+BPE tokenization are used to train the llm in gpt1,gpt2,gpt3 are use BPE 
+
+
+tokenization type 
+	
+	1)word based tokenization
+	2)character based tokenization
+	3)sub word tokenization 
+
+1)word based tokenization
+	-it slit the sentence to the word and assign the token 
+	-every word = 1 token 	
+	-dataset length around (4l to 6l) because total English word dataset is around 4lack to 6L  
+		
+	hi i am football player 
+	
+	["hi" , "i" ,"am" ,"football" ,"player"] =5 token 
+	
+	
+	disadvantage 
+		-if user give with selling mistake our data set can't find out the word 		
+		-it throw a error
+
+2)character based token 
+	
+	-it slit word to character and assign A token 
+	ex
+	if give a "football"
+	
+	["f","o","o","t","b","a","l","l"] =total token 8
+	
+	-dataset length 256(including special character's  )
+	-it had light weight data sets 
+	
+	disadvantage 
+		
+		-if we give paragraph the sequence of token will be too long
+		-in we will loss the word meanings
+	
+			ex "boy" and boys 
+				when we split to a words meaning will loss
+	
+3)sub word tokenization 
+	
+	-split words into meaning full parts 
+	-this are the method use in "gpt" and 'bert"
+	ex
+		boys 
+			["boy" ,"s"]
+	
+	for ex 
+		u have a datasets (only model understand) 
+
+			play
+			happy
+			run
+ 		user give 
+			playing
+			unhappy
+			runner
+		
+		it slip 
+			[play,ing]
+			["un",happy]
+	
+		like this it wont throw a error 	
+	
+
+
+		 	
+what is BPE
+		
+	-its subword tokenization algorithm 
+	-BPE is a method work Break words into subwords based on the most frequent character pairs.(frequent means most occurrence )
+	-using BPE we train the model from the dataset 
+	-different between sub wording tokenization and BPE
+		-Subword tokenization is the idea.
+		-BPE (Byte Pair Encoding) is one method to do subword tokenization.
+
+-----------------------------------------------------------------------------------------------------	
+practical explanation
+	
+	if dataset has names like 
+		
+		low
+		lower
+		lowest
+  
+1 step
+	
+	-split as a characters Add </w> to mark word end.
+	-</w> means “end of word”.
+		low</w>
+		l o w </w>
+
+		lower</w>
+		l o w e r </w>
+
+		lowest</w>
+		l o w e s t </w>
+	
+
+step 2 
+	 Count most frequent character pairs
+	
+		Pair	Count
+		l o	3
+		o w	3
+		w e	2
+		e r	1
+		e s	1
+		
+	Most frequent = l o
+
+step 3 
+	Merge the most frequent pair
+	
+	lo w </w>
+	lo w e r </w>
+	lo w e s t </w>
+
+step 4
+	Repeat counting Count most frequent character pairs
+		
+		Pair		Count
+		w		3
+		e r		1
+		e s t		1
+		
+step 5
+	Merge the most frequent pair
+	
+	low </w>
+	low e r </w>
+	low e s t </w>		
+	
+finally 
+	
+	low
+	low er
+	low est	
+ 
+
+---------------------------------------------------------------------
+implementation in python 
+		
+	implementing BPE from scratch is complicated so we use open source python library called "tiktoken"  
+	-link for analysing "https://github.com/openai/tiktoken"
+	
+		-pip3 install tiktoken 
+	
+-we get the BPE tokenizer from the tiktoken
+	
+		tokenizer = tiktoken.get_encoding("gpt2")  ---------> instead of encoding method(word based tokenization)"get_encoding" for create token ids 
+
+-check the encoding decoding by give a text 
+	
+		text =("Hello! do you like tea? <|endoftext|> in the sunlit terraces"  "of someUnknownPlace.")
+	
+		integer = tokenizer.encode(text,allow_special={"<|endoftext|>"})  - >,allow_special These "<|endoftext|>" special tokens are allowed and should be treated as single tokens.”
+			
+		print (integer);
+	
+-decoder 
+		
+		String = tokenizer.decode(integer)
+		print(String);
+---------------------------------------------------------------
+
+for BPE tokenization we need (tiktoken library)
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+							lecture -9 create input-target pairs 
+
+why input-target pairs
+
+BPE is just convert the token -> tokenIds and tokenids -> token it wont form sentence that's why we use a  input target pairs required so the neural network can learn next-token prediction and sentence formation.”
+	
+	 BPE decides:
+
+		-how text is split (sub-words)
+		-which token ID each piece gets
+
+	BPE does NOT:
+
+		-understand meaning
+		-predict next words
+		-generate language
+
+how it work 	
+	
+	-It learns probabilities during training
+	-it predicts the next token based on those learned probabilities.
+
+During TRAINING (offline)
+
+Given millions of sentences like:
+
+I love AI
+I love coffee
+I love music
+I love you
+	
+	after training if u type a "i love"
+	
+	it return the most probabilities works 
+
+
+implementation 
+	
+	
+   
+   import torch from torch.utils.data import Dataset, DataLoader
+
+	
+   class GPTDatasetV1(Dataset):
+
+    def __init__(self, txt, tokenizer, max_length, stride):
+        self.input_ids = []
+        self.target_ids = []
+
+        # Tokenize the entire text
+        token_ids = tokenizer.encode(
+            txt,
+            allowed_special={"<|endoftext|>"}
+        )
+
+        # Sliding window over tokenized text
+        for i in range(0, len(token_ids) - max_length, stride):
+            input_chunk = token_ids[i : i + max_length]
+            target_chunk = token_ids[i + 1 : i + max_length + 1]
+
+            self.input_ids.append(torch.tensor(input_chunk))
+            self.target_ids.append(torch.tensor(target_chunk))
+
+    def __len__(self):
+        return len(self.input_ids)
+
+    def __getitem__(self, idx):
+        return self.input_ids[idx], self.target_ids[idx]
+	
+---------------
+def createDataloader_v1(tex,batch_size=4,max_length =256,stride=128				,shuffle=ture,drop_last=True,num_wokers=0):
+	
+	tokenizer =tiktoken.get_encoding("gpt2")
+		
+	dataset = GPTDatasetV1(
+    		txt=tex, -------> "text = dataset"
+    		tokenizer=tokenizer,----->it from the tiktoken for encoding
+    		max_length=max_length,
+    		stride=stride
+		)
+
+	dataloader = DataLoader(
+		dataset,
+		batch_size = batch_size,
+		shuffle =shuffle,
+		drop_last =drop_last,
+		num_wokers = num_wokers
+	)
+
+	return dataloader;
+-------------------------------
+with open("file path","r",encoding ="utf-8")as f:
+	txt =f.read()
+
+import torch	
+	
+dataloader = createDataloader_v1(tex,text,batch_size=4,max_length =256,stride=128,shuffle=ture)
+
+data_iter = iter(dataloader)
+first_batch=next(data_iter)
+print(first_batch)
+-------------------------------
+
+what is PyTorch 
+	
+	-is deep learning frame work 
+	-help to build a neural network,train the ML/DL
+	
+what is dataset 
+	
+	-dataset using for hold the data 
+	-Defines how to get one training sample
+
+	
+	in this code 
+		-it inherit the "dataset" from the PyTorch’s in GPTDatasetV1 class 
+		-why inherit needed because we need to use 
+			
+			-How many samples exist → __len__()
+			-How to get one sample → __getitem__()
+	
+		-with this methods data loader can recognize ids 
+
+
+	ex 
+	__len__()      # how many samples
+	__getitem__() # return one sample
+
+what is dataload 
+	
+	-load the data from the datasets 
+	-create batches and shuffle the data
+	-and load parallel
+	
+DataLoader = how the data is feed to the model
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+									10 token embedding 
+	
+what is vector embedding 
+		      
+	-vector embedding is represent the data(text,image,words,etc)
+	-and it help to machine to understand and relationship between the words 
+	-if we give a cat it create a 3072 dimensional matrix and based on the similarity it will clustering the data 
+
+--------------------------------------	
+	
+popular embedding model 
+		
+	openAI give a free 1534 dimensional and for 3072 dimensional we need to pay for that 
+	
+	other model 	
+		-cohere
+		-mistral 
+--------------------------------------	
+	
+how to archive the vector embedding  
+		
+		we have to train the neural network to create a vector embedding  
+
+--------------------
+it u have a "dog,cat,banana,apple"
+
+		dog		cat 		banana		apple
+has_a_tail 	23		31		 1		2
+
+is eatable	2		3		22		38
+
+has_4_legs	19		21		0		0
+
+makes_sound	12 		18		0.5		0.2
+
+is a pet	35		31		5		7
+
+it example 5 dimensional matix  vector embedding for capture semantic meaning 
+
+-------------------------------
+demo 
+	is not actual working model we see these for demo  
+	-there is pretrained vector model by google "Word2Vec Google News 300" we use this a make demo 
+	-just like the above provide a 300 dimensional vectors
+
+
+import gensim.downloader as api 
+
+model = api.load("Word2Vec-Google-News-300")	
+
+word_vectors =model 
+print(word_vectors['comupper'])-->it print the 300 dimensinal vectors 
+	
+	
+	example 
+		king+women-men 
+			it need to return value queen becount king and women = men and queen 
+		
+		print(word_vectors.most_similar[pasitive=['king','women'] , negative['men']])
+			
+			output 
+				it give a 10 probability on a top it have "queen " 
+------------------------------------------------------------------
+how are token embedding create for llm 
+	
+	step 1
+		every token id converted to embedding vector 
+		
+		we have to create a matrix
+		-for gpt 2 they use vocabulary size 50257 and matrix dimensional 768  	
+							
+						vector dimensional matrix  
+				token id		parameter(768)			vocabulary size 
+				    0							0
+				    1						        1
+				    2							2
+				    .							.		
+				    .							.
+				    .							.
+				  50357						      50357
+
+
+
+		-for every id it have a 768 dimensional parameter 
+
+	
+		
+code for token id to vector embbeding
+	
+	input_ids = torch.tensor([2,3,5,1]) ->these are token ids
+	
+	vocab_size = 6--> tokens(vocabulary size)
+	output_dim = 3-->matrix dimension size 
+	
+	torch.manual_seed(123)
+	embedding_layer = tourch.nn.Embedding(vocab_size,output_dim)  -> it create dimensional matrix   
+	
+	print(embedding_layer.weight)	--> u can see the matrix 
+	
+	print(embedding_layer(torch.array[3]))-if u want to print exact token vectors u can print 
+		
+
+
+
+
+
+
+
+
+
+
+	
+	
+
+
+	
+
+	

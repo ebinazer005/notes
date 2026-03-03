@@ -1,0 +1,246 @@
+what is llms 
+	
+	-llm is neural network design model it means trained by huge amount of text data
+	-for generating ,understanding ,and response like human text 
+	-pure LLM we cant generate the image with multimodals like vision (LLm + vision) we can generate the image"	
+	-want to create text+ image + audio we need "multimodal" 
+
+type of llm
+	
+	-pretrained model 
+		-it basic LLM train  by a huge amount of data and response like human text 
+		ex 	
+			gpt  ->open ai
+			llama ->owned by meta 
+			BERT -Bidirectional  encoder  representational from transformer (owned by google)
+		  
+	-specialized model
+		when a fine tuning process complete for a particular domain like (bank and medical) it became a specialized model	
+	-finetuned model 
+		-it is process of train the already existing llm for domain specific data 
+	
+	
+	agent and fine tuning 
+	
+			fine tuning 
+				-it trained by your own data 
+		 		-it understanding and  talks in your tone 
+		
+			agent 
+				it decide what to do next it can call the api
+	
+		
+	 
+	-open and close llm  
+		
+		open source model completely available for free  
+			-LLaMA
+			-Mistral
+			-Falcon
+		
+		closed source
+			-gpt
+			-claude
+			-gemini 
+
+	-Multimodal models
+			-it can support audio, image , text 
+		 	-ex gpt and gemini 
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+different between LLM and agent 
+		
+	LLM 
+		-if ask something in the llm it give a answer in text generation 
+			-it won't
+				-call api (it means u tell send the mail to the person it cant call the mail api it only generate the email)
+				-remember long term 
+				
+		ex 
+		-if ask the generate the code for particular task  it can generate the code 
+		
+	agent 
+		-agent using LLM but it extend with memory and some tools (like gmail , sql database)
+		
+		 	-it can maintain the memory 
+ 			-and call the api
+			
+		ex
+		-if u tell the agent to generate the leave mail and send  to the person it can generate the mail and call the gmail api send to the person and send the confirm message  	
+		 
+	
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+	  
+different between the agentic and agent 
+	
+	-agent 
+		-it ai system using llm alogn with some tools 
+		-and it do a specific task that user ask for 
+		-it can call one api at the time or on task 
+		- "it jest follow the instruction"
+		
+		ex 	
+			
+			generate the email for leave and send to this person 
+			
+			it generate the email and send to the person that is 
+	-agentic 
+		
+		-it updated version on the agent
+		-it can call multiple api for one task 
+		-not only follow the instruction instead of it understand what to do next 
+		-it make decision and what to do next autonomously 	
+		
+	ex 
+		-if u say just "i take leave tomorrow because of something"
+	 	-it analysis the procedure 
+		
+			-generate the mail
+			-send the mail,
+			-the update in calendar and hrms 
+		 	-confirm the completion 
+
+	-chatbot
+		-it mainly use to talk 
+		-it only give a response it wont work with a tool	
+		
+			-using for 
+			-Customer support bot,
+			-google assistant 
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+LLM vs GEN AI vs DEEP LEARNING vs ML vs ARTIFICIAL INTELLiGENT 
+
+ARTIFICIAL INTELLIGENCE (AI)
+│
+├── MACHINE LEARNING (ML)
+│   │
+│   ├── Deep Learning (DL)
+│   │   │
+│   │   ├── Generative AI
+│   │   │   │
+│   │   │   ├── Large Language Models (LLMs)
+│   │   │   │   ├── GPT
+│   │   │   │   ├── BERT
+│   │   │   │   └── LLaMA
+│   │   │   │
+│   │   │   ├── Image Generation Models
+│   │   │   │   ├── DALL·E
+│   │   │   │   └── Stable Diffusion
+
+
+	
+AI	
+	-Artificial intelligent is broad concept  
+	-GOAL OF AI IT make intelligent machine  
+	-AI aims to make computers act and think like humans.
+		
+		thinking
+		learning
+		reasoning
+		decision making
+		understanding language
+			
+	-AI is a broad field, and it includes several sub-branches:
+	
+ml based ai (predict)
+	-it learn from the past data using algorithms  
+		like 
+			-Linear Regression
+			-decision tree
+	 		-random forest 
+			-svm
+
+	-Learns patterns from past decision the make a predication  
+	-Makes predictions
+	
+	ex 
+		-in youtube if u watch sports,and tech channals ml deduct what u like it show in the recommendation 
+		 			
+		-in without ml how email spam work it using particular words like “FREE” "WIN" if mail contain these words it throw to spam 
+		using ml System observes patterns: "Sender" "Words" "Links" "Frequency" it deduct the spam automatically 
+		
+
+
+DL based ai (understand the partten)
+	-dl is subset of ml
+	-it updated from the ml 
+	-ML can't recognizes complex data like image and voice ,face recognition    
+	-DL learn from the neural network and huge data sets so it can recognize the complex data  
+	
+		using for 
+			-image recognition
+			-speech recognition (siri and ,alexa ) 
+			-you tube audio caption (voice to text search automatically )
+	
+GEN AI(create)
+	-is sub set for DL
+	-it build top on DL model 
+	-GEN AI using for create a new content learn by the massive examples 
+	-using or create text ,image,music,
+	
+		LIKE 	
+			-u say write a mail for leave 
+			 	-it take the sample from the millions of email and create a brand new email 
+		
+			-if u say create image cat top on bicycle 
+				-it analys the pattern and shapes create brand new picture 
+	
+	-example "DELL -E" open ai model 
+		
+LLM
+	-it a subset for GEN AI
+	-it focusing on the language 
+	-it using for create a human like text
+
+	
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+llm vs NLP-natural language processer 
+	
+	nlp 
+	
+		-it commonly using for understanding the human language 
+		-it read your text understand and break down and pick the keywords and understand what u coming to say 
+		-but it limited ,it can't think it own, it can't create long text responses "it only works on predefine rules and models "
+		-it using a ML for understanding 
+
+
+		example 
+			if u give a text 
+				show me the roadmap become ai developer visuals 
+				 	
+				-it only understand the context 
+				-it won't give road map 	
+				-it can't create a visuals 
+ 
+		 
+	llm 
+		-it nlp+ massive amount of data 
+		-it can understand the text and generate human readable format and explain the concept clearly 
+		-it using neural network for training and transformer architecture based it work 
+		-but it only work with text it cant create a image 
+
+			example 
+			if u give a text 
+				show me the roadmap become ai developer visuals 
+				 	
+				-it only understand the context 
+				-it can give road map 	
+				-it can't create a visuals
+		
+		
+	gen ai 
+		-it can create a new content like text ,code, image, music,
+	 
+	
+		example 
+			if u give a text 
+				show me the roadmap become ai developer visuals 
+				 	
+				-it only understand the context 
+				-it can give road map 	
+				-it can create a visuals
+		
+		
+		
+	
+
+		

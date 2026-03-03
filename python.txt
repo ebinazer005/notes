@@ -1,0 +1,334 @@
+enumerate()
+	it using for get the concurrent values(index and value) from the list
+	
+	ex
+		
+		fruit =  ["apple", "banana", "cherry"]
+		
+		for i,value in enumerate(fruit):
+			print(i , value);
+
+python variable 
+	
+	-Local Variable
+	-Global Variable
+	-Global keyword ->it can make the local variable to globle 
+		
+	ex 	
+		def ebi():
+    			global x
+    			x = 10
+
+		ebi()
+		print(x)
+
+	-instance variable 	
+		
+		-it belong to the object 	
+		-self refer to the current object value 
+
+		-class Person:
+    	 		def __init__(self, name):
+        			self.name = name	
+	
+	
+datatypes 
+		
+		
+	Text Type:	str
+
+	Numeric Types:	int, float, complex(complex use to store a imaginary numbers like(3+4j))
+
+	Sequence Types:	list, tuple, range ->
+			
+			-list
+				store a mutable and order data 
+					
+				fruits = ["apple", "banana", "mango"]
+				
+			-tuple 
+				-store immutable and ordered list 
+				-Can store different data types
+				
+				numbers = (1, 2, 3)
+				
+			-range 
+				it store the sequence of the number 
+					
+				r = range(5)
+					for i in r:
+   				print(i)
+				
+
+		
+	
+	Mapping Type:	dict
+
+			it storing a key value pairs
+				x = {"name" : "John", "age" : 36}
+
+
+	Set Types:	set, frozenset	
+	
+		
+			set 
+				s = {1, 2, 3, 3}
+				print(s) 
+		
+				s.add(4)
+				s.remove(2)
+	
+				-No duplicate values
+				-Unordered		
+				-Mutable (can change)
+				-Can store different data types
+	
+			frozenset
+				A frozenset is an immutable set opposite of set .
+			
+				fs = frozenset([1, 2, 3, 3])
+				print(fs)
+	
+	Boolean Type:	bool
+	Binary Types:	bytes, bytearray, memoryview
+	None Type:	NoneType
+
+
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+-numpy 
+-panda
+-scipy
+-Django
+-PyTorch
+-tiktoken
+
+
+
+what is numpy 
+	
+	-numpy -> numerical python 
+	
+	-using for create a array in python 
+	-python already have a list so why we need a array 
+	-using numpy array it way faster then a list because it build top on a 'C'
+	-and "memory space also " less then a list 
+	
+	
+	u have to install "pep install numpy "
+
+	ex
+	import numpy as np
+	import time as time
+	
+	def __init__(self):
+            print(number)   
+            start =time.time()
+            a=[1,2,3,4,5,6,7,8]*1000
+            print(time.time()-start)
+
+    	def array(self):
+            start = time.time()
+            value=np.array([1,2,3,4,5,6,7,8]*1000)
+            print(value*2)
+            print(time.time()-start)
+	 
+	
+
+
+fist one is list second one is array time taken (list:1.5735626220703125e-05 ,array : 0.0007684230804443359)
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------
+panda 
+	
+	-panda is using for handle the table or excel data , in real life data  analysing we use panda 
+	-in other hand numpy is using for array are sequel number data panda using for table format data 
+ 	-panda is immutable we can append,remove the data we cant update the value 
+	
+example 
+	import pandas as pd
+	
+	df = pd.DataFrame({
+   		 "Name": ["A", "B", "C"],
+    		"Balance": [1000, 2000, 3000]
+	})
+	 
+	
+	
+different type of numpy and panda 
+	
+Feature	                              NumPy					Pandas
+Purpose					Numerical computing	|  Data analysis & manipulation
+Data type				ndarray	Series,		|	 DataFrame
+Data structure				Homogeneous (same type)	|Heterogeneous (different types)
+Best for				Math, matrices, vectors	|Tables, CSV, Excel, SQL-like data
+Speed						Very fast 	|Slightly slower than NumPy
+Built on					Core Python + C	|Built on NumPy
+ML usage				Core math engine	|Data preparation
+
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------
+scipy 
+	
+	it used for complex mathematical problem 
+	
+		like a 
+			-Matrix inverse 	
+			-linear algebra,
+--------------------------------------------------------------------------------------------------------------------------------------------------------
+Django 
+	-it high level python framework to build a web application 
+	
+	using Django 
+		we can build a 
+			-fast web development 
+			-build a security 
+			-Handles database
+			-backend api
+
+		using MVT ->model,view ,template method
+			
+--------------------------------------------------------------------------------------------------------------------------------------------------------
+pytourch 	
+	
+	-it open source library for ML/DL
+	-mainly using for build, train ,test the neural network 	
+	
+	-"and it provide the tenser "
+
+		tenser is nothing but multidimensional array it can run both CPU and GPU 
+	
+	
+	 	
+--------------------------------------------------------------------------------------------------------------------------------------------------------
+tiktoken 
+		
+	-it library from openAI 
+	-using this library we can tokenization the data using BPE  
+		
+		why BPE
+			-it reduce the vocabulary size 
+			-it can process the unknown token "like bsdozbaob" 
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------
+deep copy and shallow copy 
+	
+
+shallow copy 
+	if u change the nested object value original value also change 
+		
+	original = [[1, 2], [3, 4]]
+shallow = copy.copy(original)
+	
+	shallow[0][0] = 100
+print(original)  # [[100, 2], [3, 4]]  ← original is affected
+	
+deep copy 	
+		
+	it wont affect the original copy 
+	
+	
+	import copy
+
+original = [[1, 2], [3, 4]]
+deep = copy.deepcopy(original)
+
+deep[0][0] = 100
+print(original)  # [[1, 2], [3, 4]]  ← original NOT affected
+--------------------------------------------------------------------------------------------------------------------------------------------------------
+
+append()	Adds a single element at the end of the list	python lst = [1,2] lst.append(3) → [1,2,3]
+extend()	Adds all elements from another iterable (list, tuple, etc.)	python lst = [1,2] lst.extend([3,4]) → [1,2,3,4]
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------
+Keyword	What it does	Example
+break	Exits the entire loop immediately	Stop looping when a condition is met
+continue	Skips the current iteration and moves to the next iteration	Skip this step but keep
+
+for i in range(5):
+    if i == 3:
+        break
+    print(i)
+
+0
+1
+2
+✅ Stops the loop when i == 3
+
+2️⃣ Using continue
+for i in range(5):
+    if i == 3:
+        continue
+    print(i)
+Output:
+
+0
+1
+2
+4
+--------------------------------------------------------------------------------------------------------------------------------------------------------
+
+pop and remove
+	
+	pop --->default remove last value 
+	
+	remove ----> remove exact value 
+
+
+
+lst = [10, 20, 30, 20]
+
+x = lst.pop()    # removes last element
+print(x)         # 20
+print(lst)       # [10, 20, 30]
+
+lst.remove(20)   # removes first 20
+print(lst)       # [10, 30]
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------
+
+== and in and is
+	
+	
+	== -->comparing value 
+	
+	is ------> comparing memory address
+	
+	in ----->cheack the value in sequent and return the Boolean value  
+		
+		let a = [1,2,3]
+	
+		print(3 in a) //true
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
