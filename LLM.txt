@@ -401,15 +401,13 @@ two important pipe line in RAG
 	1)data ingestion pipeline 
 	2)retrieval pipe line 
 
-						   user query		             retrieval pipe line
-data ingestion pipeline					|			     --------------------
-------------------------				v						     			
- 			    		 	    retrieval		     		     output
-							^					^
-	                               storing          |					|
-	data -->parsing -> embedding -----------> vector database ---------------------------->LLM
-		
-	
+						   					            
+data ingestion pipeline								    		
+------------------------									     			
+ 			    		 	 
+	sorce file -----> chunking -----> vector embbeding ------->[1,1,0,1]---------> vector database --------------->LLM
+	10m tokens		  5k tokens         understading 		   [1,0,1,4]
+										relation ship
 ------------------------------------------------------------------------------------------------------------------------------------------------							lecture -5 a close look at gpt 3
 		
 -gpt transformer build over the transformer 
@@ -990,3 +988,4 @@ code for token id to vector embbeding
 	
 
 	
+
