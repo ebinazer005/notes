@@ -1,4 +1,18 @@
+real interview question 
 
+Interview quiz" 
+MySQL , mongodb diff
+
+Langchain
+
+Layzload
+
+Reusable component
+
+How to handle large form in react.
+useRef
+
+ 
 
 component vs element 
 	
