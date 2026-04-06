@@ -1450,14 +1450,57 @@ return(
 export default Home;
 	
 
+----------------------------------------------------------------------------------------------------------
+tanstack
+
+what is tanstack
+
+	-it a library for fetch the api
+	-using for manage the api 
+
+in app.js 
+
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+
+const queryClient = new QueryClient();
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
+  <QueryClientProvider client={queryClient}>
+    <App />
+  </QueryClientProvider>
+);
+
+---------------------
+import { useQuery } from '@tanstack/react-query';
+
+function Users() {
+
+  const fetchUsers = async () => {
+    const res = await fetch('https://jsonplaceholder.typicode.com/users');
+    return res.json();
+  };
 
 
+const  [data , isLoading , isError] = useQuery({
+	queryKey : ['first-api-fetch']
+	queryFN : fetchUsers
+})
 
 
+if(isLoading) <p>loading ...</p>
+if(isError) <p>{isError.message}</p>
 
 
-
-
+return (
+    <div>
+      <h2>User List</h2>
+      {data.map(user => (
+        <p key={user.id}>{user.name}</p>
+      ))}
+    </div>
+  );
+}
 
 
 
