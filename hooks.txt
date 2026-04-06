@@ -17,7 +17,7 @@ useReducer()
 
 useEffect()
 usecallBack()
-
+useQuery()----------->tanstack hook for fetching a api 
 custom hook()
 
 useActionStatus();
