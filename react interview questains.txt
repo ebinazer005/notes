@@ -1,16 +1,17 @@
 real interview question 
 
 Interview quiz" 
-MySQL , mongodb diff
+-vertual dom and real dom (deep concept)
+-MySQL , mongodb diff
 
-Langchain
+-Langchain
 
-Layzload
+-Layzload
 
-Reusable component
+-Reusable component
 
-How to handle large form in react.
-useRef
+-How to handle large form in react.
+-useRef
 
  
 
