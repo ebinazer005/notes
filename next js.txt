@@ -1,1 +1,56 @@
 
+
+what is next js
+
+	-next js is react framework use to build a fast and scalable application
+	-React apps run mainly in the browser, while Next.js can run both on the server and in the browser.
+
+
+for create next js
+
+	
+		npx create-next-app@latest myapp
+----------------------------------------------------------
+
+server component
+app-->page.js -------> this a server component for next js 
+
+	
+	-server component only run on a server never on a client(browser)
+for example
+	-in server component if u use a "console.log " u cant a see in that in a browser instead of u can see in a terminal
+
+---
+
+for create another page in next
+	
+  -next had a file based routing system
+  -u dont need to import the file any ware
+-just create a page.js(server component ) in side the folder it automatically execute
+  -if hit a url with a folder name u can see the page
+-just create a folder and create a server file (page.js)
+
+	-that all u right default react code it will execute
+
+
+
+
+	
+
+navigation
+	
+	-using link component from next we can routing
+
+	import Link from "next/link";
+
+	using
+	
+		<Link href="about">about</Link>
+
+
+----------------------------------------------------------
+layout component
+
+	-A layout component wraps pages and provides shared elements like header, footer, and navigation.
+	-if we right a footer in layout component
+-it will give thos for all page.js inside the folders
