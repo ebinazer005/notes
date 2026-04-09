@@ -70,10 +70,14 @@ client componets
 
 """by default all componensts are server in next js if we want we should make a client components in next js """
 
+----------------------------------------------------------
+hooks
 
-
-
-
+usePathname ---------->it give current path for a application  
+for example
+---------URL: http://localhost:3000/blog/123
+it give like this 
+---------blog/123
 
 
 
