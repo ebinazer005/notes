@@ -54,3 +54,33 @@ layout component
 	-A layout component wraps pages and provides shared elements like header, footer, and navigation.
 	-if we right a footer in layout component
 -it will give thos for all page.js inside the folders
+----------------------------------------------------------
+
+server components and client components 
+
+next js components are two types client components and server componets 
+
+server componets 
+	-they using for data fetching and backend and backend logic for better performence 
+	-sice they not using in javascripts browser 
+	
+client componets 
+	-this run on the browser 
+	-used to intraction and handle the states and lifecyle and hooks 
+
+"""by default all componensts are server in next js if we want we should make a client components in next js """
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
