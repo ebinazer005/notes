@@ -79,6 +79,47 @@ for example
 it give like this 
 ---------blog/123
 
+----------------------------------------------------------
+special convetion files ?
+
+loading.js -------------->next deducted automatically for every witing time it show the loading... page  
+page.js ----------------->reprecent a routing and help to create a page
+layout.js---------------->it is a shared ui it will share the common componets for every component like header and footer 
+error.js----------------->Catches runtime errors in that route
+----------------------------------------------------------
+suspense componet 
+
+	-suspanse component also work for loading when the data waiting period  
+	-different between the loading file and suspense componnent 
+
+loading 
+	its a autometically loading every file when a data waiting peirod 
+
+suspese 
+	-we need to do mannually and for spesific componet
+	-if want only a spesific component need to load for a waiting period we can use suspese 
+
+syntex
+	<suspense fallback={<p >....loading</p>}>
+		<Main />
+	<suspense />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
