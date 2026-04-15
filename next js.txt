@@ -82,6 +82,12 @@ it give like this
 useFormStatus
 	useFormStatus is a React hook from react-dom, but it is commonly used in Next.js with server actions to track form submission state like loading or pending.
 
+-------------------
+useFormState()   it depricate now they use useActionState ()
+
+	is used to manage form submission state and handle server-side validation results cleanly.
+	
+
 ----------------------------------------------------------
 special convetion files ?
 
