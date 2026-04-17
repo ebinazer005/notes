@@ -13,7 +13,112 @@ Interview quiz"
 -How to handle large form in react.
 -useRef
 
+--------------------------------------------------------------------------------------------------
+
+Hi , Good evening
  
+Rescheduled L1 interview questions
+ 
+1) How does the Event Loop work in JavaScript?
+ 
+2) What is the difference between Debouncing and Throttling?
+ 
+3) Why is React popular?
+ 
+4) How does React rendering work?
+ 
+5) What are Custom Components in React?
+ 
+6) How do you optimize a React application?
+ 
+Coding Challenge
+ 
+1) Implement a function:
+ 
+add(2,3) // 5
+ 
+add(2,3) // no operation
+ 
+add(3,2) // no operation
+ 
+add(4,5) // 9
+ 
+2) Custom Hook + API Handling
+ 
+Create a custom hook for API calls
+ 
+Use it in two components:
+ 
+First component:
+ 
+Fetch data from: https://jsonplaceholder.typicode.com/todos
+ 
+Display the data properly
+ 
+Second component:
+ 
+Fetch data from: https://jsonplaceholder.typicode.com/todo
+ 
+Handle and display errors correctly
+ 
+3) Optimization Problem:
+ 
+function App() {
+ 
+const [count, setCount] = React.useState(0);
+ 
+return (
+ 
+<>
+ 
+<button onClick={() => setCount(c => c + 1)}>
+ 
+Increment
+ 
+</button>
+ 
+<HeavyComponent />
+ 
+</>
+ 
+);
+ 
+}
+ 
+function HeavyComponent() {
+ 
+console.log("Rendered");
+ 
+// expensive render
+ 
+return <div>Heavy</div>;
+ 
+}
+ 
+Tasks:
+ 
+Optimize using React.memo
+ 
+Optimize using useMemo
+ 
+Optimize without using memoization
+ 
+ 
+Hi ,Good Morning 
+L1 Interview questions 
+What is React, and how does it work?
+What is a React Portal, and when should it be used?
+What is the difference between useState and useRef?
+Why do we use useRef in React?
+What is a client-side protected route, and how is it implemented in React?
+Explain the component lifecycle methods in both class components and functional components.
+What are the DOM and Virtual DOM? Explain their flow and how they work in React.
+How does the React rendering process work?
+What is the React Profiler, and why is it used?
+What is the difference between the Context API and Redux?
+Explain useEffect with code examples and relate it to real-time lifecycle methods.
+ 
+--------------------------------------------------------------------------------------------------
 
 component vs element 
 	
