@@ -112,8 +112,14 @@ syntex
 	<suspense fallback={<p >....loading</p>}>
 		<Main />
 	<suspense />
+----------------------------------------------------------
+how to connect database in nextjs 
 
+install the mogoDB
+	npm install mongodb
 
+using "MongoClient Connect "
+	MongoClient Connect('conect URL')
 
 
 
