@@ -1,0 +1,81 @@
+why and what is type script 
+
+why 
+  -Instead of finding errors at runtime, TypeScript catches them while coding.
+  -In React, props can get messy. TypeScript makes them clear and predictable. 
+
+what 
+  -TypeScript in React is used to add type safety,
+  -which is provide a error during a development time 
+  -using typescript we can easly manage the code and it improve the readablity 
+
+
+how to install typecscript 
+
+  npm instal typescript
+  npm instal -g typescript-----------> for globle 
+
+for run the typedcript file 
+
+-------------------------------------------------------------------------
+variable declaration 
+  let a : String;
+  a="ebi"
+
+  let a : number;
+  a=05
+
+ let a : boolean;
+  a = true
+
+-------------------------------------------------------------------------
+
+array declaration 
+
+  let a : string[]
+  a = ["a","b","c"]
+
+object declaration 
+
+  we can declear both way "type" and "interface"
+
+type way 
+----------
+    let User ={
+      name : String;
+      age : number; 
+    }
+
+  let user : User ={
+      name : "ebi",
+      age : 25
+  }
+
+interface way 
+------------------
+interface User = {
+  name : String;
+  age : 25;
+}
+
+let user : User = {
+  String : "ebi",
+  age : 25
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
