@@ -153,6 +153,30 @@ import React from 'react'
 
   }
 
+-------------------------------------------------------------------------
+useRef()
+
+import React from 'react'
+import { useRef } from react
+  const Form =() =>{
+
+    const referenceValue = ref<HTMLInputValue>(null)  
+    function handleSubmit(event : React.formEvent){
+
+      event.preventdefault()
+      const entervalue =  referenceValue.current?.vlaue
+    
+    }
+
+    return(
+        <form onSubmit={handleSubmit}>
+          <lable> todo text </lable>
+          <input type = "text" id = "text" ref ={referenceValue}></input>
+          <button>click</button>
+        </form>
+    )
+
+  }
 
 
 
