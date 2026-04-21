@@ -63,15 +63,95 @@ let user : User = {
   age : 25
 }
 
+-------------------------------------------------------------------------
+props passing in tsx
 
+        pass props using function component (FC)
+    ----------------------------------------------
+import React from "react";
+type Props={
+    name : string;
+    age : number;
+    array : number[];
+    obj : {name: string, age: number };
+    children : any;
+    func : any
+}
+const Home :React.FC<Props> = ({name , age ,array , obj ,children ,func}) => {
+    return ( <>
+        <ul>
+            <li>{name}</li>
+            <li>{age}</li>
+            {array.map((value,index)=>(
+                <div key={index}>
+                    <li>{value}</li>
+                </div>
+            ))}
+            
+            <li>{obj.name}</li>
+            <li>{obj.age}</li>
+            <li>{children}</li>
+            <li>{func}</li>
+        </ul>
+    </> );
+}
+ 
+export default Home;
 
+normal way 
+--------------
+type Props={
+    name : string;
+    age : number;
+    array : number[];
+    obj : {name: string, age: number };
+    children : any;
+    func : any
+}
+const Home = (props : Props) => {
+    return ( <>
+        <ul>
+            <li>{props.name}</li>
+            <li>{props.age}</li>
+            {props.array.map((value,index)=>(
+                <div key={index}>
+                    <li>{value}</li>
+                </div>
+            ))}
+            
+            <li>{props.obj.name}</li>
+            <li>{props.obj.age}</li>
+            <li>{props.children}</li>
+            <li>{props.func}</li>
+        </ul>
+    </> );
+}
+ 
+export default Home;
 
+-------------------------------------------------------------------------
 
+form submission 
 
+import React from 'react'
 
+  const Form =() =>{
 
+    function handleSubmit(event : React.formEvent){
 
+      event.preventdefault()
+    
+    }
 
+    return(
+        <form onSubmit={handleSubmit}>
+          <lable> todo text </lable>
+          <input type = "text" id = "text"></input>
+          <button>click</button>
+        </form>
+    )
+
+  }
 
 
 
