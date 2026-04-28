@@ -1245,6 +1245,7 @@ List<Integer> numbers = Arrays.asList(1, 2, 3, 4, 5);
 -----------------------------------------------------------------------------	
 
 
+
 assert
 	
 	-assert keyword is using for debugging 
@@ -1487,4 +1488,40 @@ volatile boolean flag = true;
 
 
 -----------------------------------------------------------------------------------------------
+
+what is enum (short for enumeration)
+		-An enum in Java is a special data type 
+		-used to store a constant values
+		-It improves type safety
+		-instead of using strings or numbers we use a enum 
+
+systex 
+
+public enum Role {
+    USER,
+    ADMIN,
+    MANAGER
+}
+
+
+-----------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
