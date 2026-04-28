@@ -1831,6 +1831,23 @@ installation process
 		
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+what is enum (short for enumeration)
+		-An enum in Java is a special data type 
+		-used to store a constant values
+		-It improves type safety
+		-instead of using strings or numbers we use a enum 
+
+systex 
+
+public enum Role {
+    USER,
+    ADMIN,
+    MANAGER
+}
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 Ebinazer Selvaraj <ebinazerselvaraj206@gmail.com>
 21:26 (3 minutes ago)
 to Ebinazer
@@ -1929,9 +1946,7 @@ u need to write every thing from the scratch slow/hard to maintain
 -for access "http://localhost:8080/h2-console"	
  	
 
-
-
-
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
 
