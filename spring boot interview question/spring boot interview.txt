@@ -490,7 +490,10 @@ common annotation
 	
 	EX 
 		@Transactional(rollbackFor = Exception.class)
-	 
+
+	@trasient
+			 "transient" refers to fields or objects that are not saved to a persistent "store like a database"
+			-mostly using for confirem password
 
 		
 	-you can use this for class and methods in a service class 
