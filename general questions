@@ -1,0 +1,84 @@
+1) Tell me about a time you identified a performance bottleneck in your application. 
+How did you diagnose it, and what specific metrics or tools did you use to verify that your fix actually worked?"
+  aunswer
+
+  -  clear problem
+  - how to measured it
+  -what tool u use 
+  -after that clear runing matrics ()
+
+-one of the banking project i work i findout the performance issue expecialy in peek horus end-of-day processing.
+-so initially we measure api response time and use tools like a "apm" and "sql matrix"
+-so initially we tepmrary increate the thread for handle the better request 
+-after that we find out it like a data over flow in a "(transaction table)" so imidiatly take backup data move to 
+the sperate table 
+then we measue the api it getting a 2 to 4 ms spead that how we resolve the problem 
+
+
+
+for IBM ace perfoemnce
+      -Used to monitor
+              we can see the 
+              -CPU usage per flow
+              -Node-level performance
+
+      commond 
+           -mqsireportproperties
+
+     -IBM MQ Explorer
+          -we can check the mq queue depth 
+      -and database tracing 
+
+    
+
+2) explain the project end to end 
+
+-  fist step we do is requirment gethering via team meeting 
+-  and we anlys the resource we have for do the project match the reqirmnt 
+- after we discouse create  design document for that High-Level Design (HLD) and Low-Level Design (LLD). 
+This includes:
+        ex 
+            Database schema and transaction flow
+            Error handling and logging strategy
+
+      hld contains
+        -System Architecture Diagram
+          what database we use ,frontend ,bakend
+
+        Data Flow Diagram
+           How request moves:
+
+        Technology Stack
+           java,springboot,ibm mq,ibm ace,sqldatabase ,cloude
+
+        security overview
+          jwt,oauth
+
+    LLD
+
+      api details
+      database design
+      error handlng 
+
+- then write the business logic 
+- then i do only a "SIT" testing then move to the testing team
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
