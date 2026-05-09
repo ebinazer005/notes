@@ -30,7 +30,7 @@ for IBM ace perfoemnce
       -and database tracing 
 
     
-
+-------------------------------------------------------------------------------------------------------------------------------------
 2) explain the project end to end 
 
 -  fist step we do is requirment gethering via team meeting 
@@ -62,9 +62,36 @@ This includes:
 
 - then write the business logic 
 - then i do only a "SIT" testing then move to the testing team
+-------------------------------------------------------------------------------------------------------------------------------------
 
+production issues
 
+Scenario: Incorrect User Data Appearing in API Response
+  
+- We had a banking integration project using:
+- the responsible for the service is fetch a customent details from the database 
 
+situation 
+-  during a UIT client notice the some unexpected  data like "test123" appearing from the api response 
+and client asking why that unexpected data appearing 
+
+My Responsibility
+
+I was part of the integration team handling:
+
+ACE flow validation
+Database mapping checks
+API payload verification
+Log analysis
+
+i cheack incomming message and logs every thing working perfectly 
+
+root cause 
+- it testing team was mannually (hard coding) add some data for testing purpose 
+- clent does't know the teachnical part 
+-we make them understand mannualy add for testing purpose
+- and load some payload in live make them convince 
+- after thet we give seperate work sheet for testing team to prevent the issue 
 
 
 
