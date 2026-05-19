@@ -1,3 +1,9 @@
+
+what is Connection pooling in database
+	Connection pooling is a mechanism where reusable database connections are maintained in a pool to improve application 
+performance
+
+
 lang chain  
 
 If asked:
