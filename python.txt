@@ -167,8 +167,37 @@ Speed						Very fast 	|Slightly slower than NumPy
 Built on					Core Python + C	|Built on NumPy
 ML usage				Core math engine	|Data preparation
 
+What is pandas DataFrame?
 
+A DataFrame is a 2-dimensional labeled table in Pandas.It looks like an Excel sheet or SQL table with:
 
+syntex
+data = {
+    "Name": ["Ram", "Sam"],
+    "Age": [21, 22]
+}
+
+df = pd.DataFrame(data)
+print(df)
+
+output
+ Name  Age
+0  Ram   21
+1  Sam   22
+
+Difference between loc and iloc
+
+both are using for accessing a data 
+
+loc Label-based like (df.loc[0,"name"])
+
+iloc is index based (df.iloc[0,1])
+
+Data Cleaning?
+isnull() ------find the null, value
+dropna()------>remove the null value
+fillna()------->fill the null value
+drop_duplicates()----------->remove the duplicate value
 --------------------------------------------------------------------------------------------------------------------------------------------------------
 scipy 
 	
