@@ -1,3 +1,18 @@
+1.Features of java 8 and 17.
+2.What problem does stream API solve?
+3.If two interfaces have same method and we want to implement them how do we resolve it ?
+4. Imperative vs functional programming .
+5.Difference between mock and static mock in junit.
+6. Difference between abstract and interface .
+7.Difference between map and flatmap in java 8.
+8.write code for aggregation, association and composition.
+9.Write code for LRU Cache implementation.
+10. Use of Respository annotation and what happens if we don't use it .
+
+
+1. Association
+Association represents a relationship where two objects are connected but can exist independently.
+
 class FirstObject{
  String name;
  FirstObject(String name){
