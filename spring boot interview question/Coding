@@ -1,0 +1,30 @@
+class FirstObject{
+ String name;
+ FirstObject(String name){
+ this.name=name;
+ }
+
+ public String ebi(){
+ return name;
+ }
+
+ }
+
+class SecondObject{
+ String action;
+ SecondObject(String action){
+ this.action=action;
+ }
+
+ void Join(FirstObject a){
+ System.out.print(a.ebi() + " "+ action);
+ }
+ }
+
+class Main {
+ public static void main(String[] args) {
+ FirstObject fo = new FirstObject("ebi");
+ SecondObject so= new SecondObject("working");
+ so.Join(fo);
+ }
+ }
